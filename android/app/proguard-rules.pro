@@ -1,0 +1,1 @@
+-keep class io.qcodelabsllc.qreeket.BuildConfig { *; }

@@ -1,0 +1,139 @@
+name: mobile
+description: A mobile application platform for tertiary students to communicate, collaborate and share ideas with each other.
+publish_to: 'none'
+version: 0.0.1-alpha+2
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  grpc: ^3.1.0
+  protobuf: ^2.1.0
+  protobuf_google: ^0.0.1
+  google_maps_flutter: ^2.2.5
+  injectable: ^2.1.1
+  get_it: ^7.2.0
+  bloc: ^8.1.1
+  flutter_bloc: ^8.1.2
+  modal_bottom_sheet: ^3.0.0-pre
+  pinput: ^2.2.31
+  dartz: ^0.10.1
+  lottie: ^2.3.2
+  google_fonts: ^4.0.3
+  flutter_secure_storage:
+  device_info_plus: ^8.2.0
+  shared_utils:
+    git: https://github.com/quabynah-bilson/shared_utils.git
+  intl: any
+  local_auth: ^2.1.6
+  flutter_dotenv: ^5.0.2
+  url_launcher: ^6.1.10
+  animated_bottom_navigation_bar: ^1.2.0
+  google_maps_webservice: ^0.0.19
+  geolocator: ^9.0.2
+  sentry_flutter: ^7.6.1
+  geocoding:
+  package_info_plus: ^4.0.1
+  geofence_service: ^4.0.0
+  flutter_local_notifications: ^14.0.0
+  webview_flutter_plus: ^0.3.0+2
+  flutter_staggered_animations: ^1.1.1
+  flutter_staggered_grid_view: ^0.6.2
+  image_picker: ^0.8.7+4
+  image_cropper: ^4.0.1
+  timeago: ^3.4.0
+  share_plus: ^7.0.1
+  envied: ^0.3.0+3
+  flutter_svg:
+  tinycolor2: ^3.0.1
+  flutter_highlight: ^0.7.0
+  flutter_facebook_auth: ^5.0.11
+  sign_in_with_apple: ^4.3.0
+  google_sign_in: ^6.1.0
+  firebase_core: ^2.12.0
+  flutter_config: ^2.0.0
+  copy_with_extension: ^5.0.2
+  uuid: ^3.0.7
+  badges: ^3.1.1
+  heroicons: ^0.8.0
+  flutter_jailbreak_detection: ^1.10.0
+  dotted_border: ^2.0.0+3
+  connectivity_plus: ^4.0.1
+  cached_network_image: ^3.2.3
+  hive_flutter: ^2.0.0-dev
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.4
+  injectable_generator: ^2.1.5
+  flutter_launcher_icons: ^0.13.0
+  flutter_native_splash:
+  mocktail: ^0.3.0
+  change_app_package_name: ^1.1.0
+  envied_generator: ^0.3.0+3
+  copy_with_extension_gen:
+  lints: ^2.0.0
+#  integration_test:
+#    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  generate: true
+  fonts:
+    - family: FiraCode
+      fonts:
+        - asset: assets/fonts/firacode.ttf
+  assets:
+    - assets/img/
+    - assets/anim/
+    - assets/brand/
+    - assets/avatars/
+
+# dart run flutter_launcher_icons
+# make background transparent for android
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/app_logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  adaptive_icon_background: "#CF44C5"
+  adaptive_icon_foreground: "assets/img/app_logo.png"
+  adaptive_icon_mask: true
+  web:
+    generate: true
+    image_path: "assets/img/app_logo.png"
+    background_color: "#CF44C5"
+    theme_color: "#CF44C5"
+  windows:
+    generate: true
+    image_path: "assets/img/app_logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/img/app_logo.png"
+
+# dart run flutter_native_splash:create
+flutter_native_splash:
+  image: assets/img/app_logo.png
+  image_dark: assets/img/app_logo.png
+  icon_background_color: "#ffffff"
+  color: "#ffffff"
+  color_dark: "#313338"
+  icon_background_color_dark: "#313338"
+  web: false
+  web_image_mode: contain
+  android_12:
+    image: assets/img/app_logo.png
+    color: "#ffffff"
+    icon_background_color: "#ffffff"
+    icon_background_color_dark: "#ffffff"
+    color_dark: "#ffffff"
+    image_dark: assets/img/app_logo.png

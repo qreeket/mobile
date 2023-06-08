@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "937347157207",
+    "project_id": "qreeket",
+    "storage_bucket": "qreeket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937347157207:android:f69d7dfae91d5ba9607492",
+        "android_client_info": {
+          "package_name": "io.qcodelabsllc.qreeket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937347157207-3u9pq8d5gleb7gno5dd3qenomf1b2o6d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.qcodelabsllc.qreeket",
+            "certificate_hash": "9626d36ffc02b1c21004aaa6964f0775d8fb209e"
+          }
+        },
+        {
+          "client_id": "937347157207-co1ckjqd946p6lgmesvbq2tsoun0747f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1Kf51cJohxZ1hrgC04Y1aljZQNkR_dDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937347157207-co1ckjqd946p6lgmesvbq2tsoun0747f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "937347157207-1qpc0km5hv9dnvkr59njhl7v78ht4ei8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.qcodelabsllc.qreeket.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
