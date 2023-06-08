@@ -14,4 +14,13 @@ run-builder-for-mobile:
 	@echo "running builder for mobile..." && \
 	dart run build_runner watch --delete-conflicting-outputs
 
-.PHONY: get-protos-submodule update-protos-submodule protos-mobile run-builder-for-mobile
+build-app-bundle:
+	@echo "running builder for mobile..." && \
+    flutter build appbundle --release --no-tree-shake-icons
+
+gen-user-avatars:
+	@echo "generating user avatars..." && \
+		cd assets/avatars && \
+		dicebear adventurer . --format png --count 30
+
+.PHONY: get-protos-submodule update-protos-submodule protos-mobile run-builder-for-mobile build-app-bundle gen-user-avatars
