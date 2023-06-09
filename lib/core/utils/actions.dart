@@ -6,19 +6,19 @@ void openWhatsappChat() async {
 }
 
 void openGithubRepo() async {
-  final url = Uri.parse('https://github.com/quabynah-bilson/qreeket');
+  final url = Uri.parse('https://github.com/qreeket');
   if (await canLaunchUrl(url)) await launchUrl(url);
 }
 
 void openTermsOfUse() async {
   final url =
-      Uri.parse('https://quabynah-bilson.github.io/qreeket/docs/terms_of_use');
+      Uri.parse('https://qreeket.github.io/docs/terms_of_use');
   if (await canLaunchUrl(url)) await launchUrl(url);
 }
 
 void openPrivacyPolicy() async {
   final url =
-      Uri.parse('https://quabynah-bilson.github.io/qreeket/docs/privacy');
+      Uri.parse('https://qreeket.github.io/docs/privacy');
   if (await canLaunchUrl(url)) await launchUrl(url);
 }
 
