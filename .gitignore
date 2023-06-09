@@ -44,7 +44,6 @@ app.*.map.json
 /android/app/release
 
 # others
-**/env.g.dart
 **/firebase_options.dart
 **/.env.*
 pubspec.lock
