@@ -1,3 +1,5 @@
+const kAppName = 'Qreeket';
+
 const kDurationTooFast = Duration(milliseconds: 50);
 const kDurationFast = Duration(milliseconds: 200);
 const kDurationMedium = Duration(milliseconds: 350);

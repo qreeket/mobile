@@ -235,9 +235,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                           icon: TablerIcons.user_circle,
                           label: context.localizer.setVisibility,
                           onTap: () {}, // do nothing,
-                          trailing: CupertinoSwitch(
+                          trailing: Switch(
                             value: _visibleToFriends,
-                            activeColor: context.colorScheme.secondary,
                             onChanged: (value) {
                               setState(() => _visibleToFriends = value);
                               _currentUser?.isVisible = value;
@@ -252,9 +251,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                           icon: TablerIcons.notification,
                           label: context.localizer.notificationPermission,
                           onTap: () {}, // do nothing,
-                          trailing: CupertinoSwitch(
+                          trailing: Switch(
                             value: _notificationPermission,
-                            activeColor: context.colorScheme.secondary,
                             onChanged: (enabled) {
                               setState(() => _notificationPermission = enabled);
                               _permissionCubit.toggleNotifications(enabled);
@@ -267,9 +265,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                               : TablerIcons.fingerprint,
                           label: context.localizer.biometricPermission,
                           onTap: () {}, // do nothing,
-                          trailing: CupertinoSwitch(
+                          trailing: Switch(
                             value: _biometricPermission,
-                            activeColor: context.colorScheme.secondary,
                             onChanged: (enabled) {
                               setState(() => _biometricPermission = enabled);
                               _permissionCubit.toggleBiometrics(enabled);

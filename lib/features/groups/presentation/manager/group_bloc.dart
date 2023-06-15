@@ -9,7 +9,7 @@ import 'package:shared_utils/shared_utils.dart';
 part 'group_event.dart';
 
 class GroupBloc extends Bloc<GroupEvent, BlocState> {
-  final _groupRepo = getIt<BaseGroupRepository>();
+  final _groupRepo = sl<BaseGroupRepository>();
 
   GroupBloc() : super(BlocState.initialState()) {
     on<CreateGroup>((event, emit) async {

@@ -19,18 +19,17 @@ final class GroupRemoteDataSource {
 
   Future<Either<Group, String>> getGroupById(String groupId) async =>
       runWithGrpcUnaryZonedGuarded(
-          run: () async =>
-              await _groupClient.getGroup(StringValue(value: groupId)));
+          () async => await _groupClient.getGroup(StringValue(value: groupId)));
 
   Future<Either<Stream<List<Group>>, String>> getGroupsForUser(
           String userId) async =>
-      runWithGrpcStreamZonedGuarded(run: () async {
+      runWithGrpcStreamZonedGuarded(() async {
         final response = _groupClient.getGroups(StringValue(value: userId));
         return response.map((event) => event.groups).asBroadcastStream();
       });
 
   Future<Either<Stream<List<Group>>, String>> getGroupsForCurrentUser() async =>
-      runWithGrpcStreamZonedGuarded(run: () async {
+      runWithGrpcStreamZonedGuarded(() async {
         final uid = await _securityRepository.getUserId();
         final response = _groupClient.getGroups(StringValue(value: uid));
         return response.map((event) => event.groups).asBroadcastStream();
@@ -41,7 +40,7 @@ final class GroupRemoteDataSource {
     required String description,
     File? image,
   }) async =>
-      runWithGrpcUnaryZonedGuarded(run: () async {
+      runWithGrpcUnaryZonedGuarded(() async {
         var request = CreateGroupRequest(
           name: name,
           description: description,

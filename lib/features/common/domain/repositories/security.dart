@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 /// Interface for security repository
-abstract class BaseSecurityRepository {
+abstract interface class BaseSecurityRepository {
   Future<void> updateDefaultLanguage(String locale);
 
   Future<String> getLocale();

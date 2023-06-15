@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -524,7 +523,7 @@ class _RegisterAccountPageState extends State<RegisterAccountPage> {
                 .caption(context, emphasis: kEmphasisMedium),
             leading: const Icon(TablerIcons.notification),
             contentPadding: EdgeInsets.zero,
-            trailing: CupertinoSwitch(
+            trailing: Switch(
               activeColor: context.colorScheme.secondary,
               value: _notificationPermission,
               onChanged: (enabled) {
@@ -540,7 +539,7 @@ class _RegisterAccountPageState extends State<RegisterAccountPage> {
                 .caption(context, emphasis: kEmphasisMedium),
             leading: const HeroIcon(HeroIcons.users),
             contentPadding: EdgeInsets.zero,
-            trailing: CupertinoSwitch(
+            trailing: Switch(
               activeColor: context.colorScheme.secondary,
               value: _visibleToFriends,
               onChanged: (enabled) =>
@@ -553,7 +552,7 @@ class _RegisterAccountPageState extends State<RegisterAccountPage> {
                 .caption(context, emphasis: kEmphasisMedium),
             leading: const HeroIcon(HeroIcons.userGroup),
             contentPadding: EdgeInsets.zero,
-            trailing: CupertinoSwitch(
+            trailing: Switch(
               activeColor: context.colorScheme.secondary,
               value: _visibleToOtherColleges,
               onChanged: (enabled) =>
@@ -567,7 +566,7 @@ class _RegisterAccountPageState extends State<RegisterAccountPage> {
             leading: Icon(
                 Platform.isIOS ? TablerIcons.face_id : TablerIcons.fingerprint),
             contentPadding: EdgeInsets.zero,
-            trailing: CupertinoSwitch(
+            trailing: Switch(
               activeColor: context.colorScheme.secondary,
               value: _biometricPermission,
               onChanged: (enabled) {

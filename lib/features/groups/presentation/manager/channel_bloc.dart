@@ -8,7 +8,7 @@ import 'package:shared_utils/shared_utils.dart';
 part 'channel_event.dart';
 
 class ChannelBloc extends Bloc<ChannelEvent, BlocState> {
-  final _repository = getIt<BaseChannelRepository>();
+  final _repository = sl<BaseChannelRepository>();
 
   ChannelBloc() : super(BlocState.initialState()) {
     on<GetChannels>((event, emit) async {

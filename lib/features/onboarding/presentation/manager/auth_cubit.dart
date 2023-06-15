@@ -7,8 +7,8 @@ import 'package:protobuf_google/protobuf_google.dart';
 import 'package:shared_utils/shared_utils.dart';
 
 class AuthCubit extends Cubit<BlocState> {
-  final _securityRepo = getIt<BaseSecurityRepository>(),
-      _authRepo = getIt<BaseAuthRepository>();
+  final _securityRepo = sl<BaseSecurityRepository>(),
+      _authRepo = sl<BaseAuthRepository>();
 
   AuthCubit() : super(BlocState.initialState());
 

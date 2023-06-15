@@ -9,8 +9,8 @@ const _kServerNotAvailableMessage =
     'Oops... It seems our servers are not available at the moment. Please try again later.';
 
 /// wrapper for grpc unary calls.
-Future<Either<L, R>> runWithGrpcUnaryZonedGuarded<L, R>({
-  required Future<L> Function() run,
+Future<Either<L, R>> runWithGrpcUnaryZonedGuarded<L, R>(
+  Future<L> Function() run, {
   Either<L, R> Function(GrpcError)? onError,
   String? errMessage,
 }) async {
@@ -32,8 +32,8 @@ Future<Either<L, R>> runWithGrpcUnaryZonedGuarded<L, R>({
 }
 
 /// wrapper for grpc stream calls.
-Future<Either<Stream<L>, R>> runWithGrpcStreamZonedGuarded<L, R>({
-  required Future<Stream<L>> Function() run,
+Future<Either<Stream<L>, R>> runWithGrpcStreamZonedGuarded<L, R>(
+  Future<Stream<L>> Function() run, {
   Either<Stream<L>, R> Function(GrpcError)? onError,
   String? errMessage,
 }) async {

@@ -22,7 +22,7 @@ class TokenGrpcInterceptor implements ClientInterceptor {
           options.mergedWith(CallOptions(providers: [_tokenProvider])));
 
   FutureOr<void> _tokenProvider(Map<String, String> md, String _) async {
-    final securityRepository = getIt<BaseSecurityRepository>();
+    final securityRepository = sl<BaseSecurityRepository>();
     md['x-language-id'] = await securityRepository.getLocale();
 
     // get token from storage

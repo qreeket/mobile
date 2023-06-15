@@ -4,7 +4,7 @@ import 'package:mobile/features/common/domain/repositories/common.dart';
 import 'package:shared_utils/shared_utils.dart';
 
 class CommonCubit extends Cubit<BlocState> {
-  final _commonRepo = getIt<BaseCommonRepository>();
+  final _commonRepo = sl<BaseCommonRepository>();
 
   CommonCubit() : super(BlocState.initialState());
 

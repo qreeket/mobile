@@ -15,7 +15,7 @@ class ChannelRemoteDataSource {
   const ChannelRemoteDataSource(this._channelClient, this._securityRepository);
 
   Future<Either<Channel, String>> getChannel(String id) async =>
-      runWithGrpcUnaryZonedGuarded(run: () async {
+      runWithGrpcUnaryZonedGuarded(() async {
         var channel = await _channelClient.getChannel(StringValue(value: id));
         return channel;
       });
@@ -26,7 +26,7 @@ class ChannelRemoteDataSource {
     required String group,
     required bool isPublic,
   }) async =>
-      runWithGrpcUnaryZonedGuarded(run: () async {
+      runWithGrpcUnaryZonedGuarded(() async {
         var request = CreateChannelRequest(
           name: name,
           description: description,
@@ -39,7 +39,7 @@ class ChannelRemoteDataSource {
       });
 
   Future<Either<Empty, String>> deleteChannel(String id) async =>
-      runWithGrpcUnaryZonedGuarded(run: () async {
+      runWithGrpcUnaryZonedGuarded(() async {
         var channel =
             await _channelClient.deleteChannel(StringValue(value: id));
         return channel;
@@ -47,12 +47,11 @@ class ChannelRemoteDataSource {
 
   Future<Either<Channel, String>> updateChannel(Channel request) async =>
       runWithGrpcUnaryZonedGuarded(
-          run: () async => await _channelClient.updateChannel(request));
+          () async => await _channelClient.updateChannel(request));
 
   Future<Either<Stream<List<Channel>>, String>> getChannels(
           String group) async =>
-      runWithGrpcStreamZonedGuarded(
-          run: () async => _channelClient
-              .getChannelsForGroup(StringValue(value: group))
-              .map((event) => event.channels));
+      runWithGrpcStreamZonedGuarded(() async => _channelClient
+          .getChannelsForGroup(StringValue(value: group))
+          .map((event) => event.channels));
 }

@@ -4,7 +4,7 @@ import 'package:mobile/features/common/domain/repositories/security.dart';
 import 'package:shared_utils/shared_utils.dart';
 
 class PermissionCubit extends Cubit<BlocState> {
-  final _securityRepo = getIt<BaseSecurityRepository>();
+  final _securityRepo = sl<BaseSecurityRepository>();
 
   PermissionCubit() : super(BlocState.initialState());
 

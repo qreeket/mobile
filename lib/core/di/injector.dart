@@ -8,7 +8,7 @@ import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
 
 // This is our global ServiceLocator
-GetIt getIt = GetIt.instance;
+GetIt sl = GetIt.instance;
 
 // This is a helper method to register all the models and services
 @injectableInit
@@ -36,5 +36,5 @@ Future<void> configureDependencies() async {
   await Hive.openBox(Env.kUserGroupsBoxName);
   await Hive.openBox(Env.kUserChannelsBoxName);
   await Hive.openBox(Env.kUserMessagesBoxName);
-  getIt.init();
+  sl.init();
 }
