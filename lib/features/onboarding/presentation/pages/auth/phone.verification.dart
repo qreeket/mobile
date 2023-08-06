@@ -146,15 +146,6 @@ class _PhoneNumberVerificationPageState
                       ),
                       androidSmsAutofillMethod:
                           AndroidSmsAutofillMethod.smsUserConsentApi,
-                      // onClipboardFound: (value) {
-                      //   debugPrint('onClipboardFound: $value');
-                      //   if (value.length == 6 && value.isNumeric) {
-                      //     _pinController.setText(value);
-                      //     _authCubit.verifyOTP(
-                      //         phoneNumber: widget.phoneNumber, otp: value);
-                      //   }
-                      //   _pinController.setText(value);
-                      // },
                       onCompleted: (value) {
                         if (value.length == 6 && value.isNumeric) {
                           _authCubit.verifyOTPForPhoneNumber(
