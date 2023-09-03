@@ -21,16 +21,16 @@ import 'package:mobile/features/common/presentation/widgets/tab.container.dart';
 import 'package:mobile/features/groups/presentation/manager/channel_bloc.dart';
 import 'package:mobile/features/groups/presentation/manager/group_bloc.dart';
 import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
-import 'package:mobile/features/qreeket/presentation/manager/core_bloc.dart';
-import 'package:mobile/features/qreeket/presentation/manager/messaging_bloc.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/channel.type.label.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/chat.message.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/dm.tile.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/expandable.label.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/group.icon.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/icon.button.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/input.field.dart';
-import 'package:mobile/features/qreeket/presentation/widgets/subscriber.tile.dart';
+import 'package:mobile/features/core/presentation/manager/core_bloc.dart';
+import 'package:mobile/features/core/presentation/manager/messaging_bloc.dart';
+import 'package:mobile/features/core/presentation/widgets/channel.type.label.dart';
+import 'package:mobile/features/core/presentation/widgets/chat.message.dart';
+import 'package:mobile/features/core/presentation/widgets/dm.tile.dart';
+import 'package:mobile/features/core/presentation/widgets/expandable.label.dart';
+import 'package:mobile/features/core/presentation/widgets/group.icon.dart';
+import 'package:mobile/features/core/presentation/widgets/icon.button.dart';
+import 'package:mobile/features/core/presentation/widgets/input.field.dart';
+import 'package:mobile/features/core/presentation/widgets/subscriber.tile.dart';
 import 'package:mobile/generated/assets.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    kUseDefaultOverlays(context, statusBarBrightness: context.theme.brightness);
+    context.withDefaultOverlays(statusBarBrightness: context.theme.brightness);
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => _coreBloc),

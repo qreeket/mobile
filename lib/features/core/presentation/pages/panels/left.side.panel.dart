@@ -24,7 +24,7 @@ class _LeftSidePanelState extends State<LeftSidePanel> {
 
   @override
   Widget build(BuildContext context) {
-    kUseDefaultOverlays(context, statusBarBrightness: context.theme.brightness);
+    context.withDefaultOverlays(statusBarBrightness: context.theme.brightness);
     return Builder(
       builder: (context) => Row(
         children: [

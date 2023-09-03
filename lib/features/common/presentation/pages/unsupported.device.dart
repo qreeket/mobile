@@ -15,7 +15,7 @@ class UnsupportedDevicePage extends StatefulWidget {
 class _UnsupportedDevicePageState extends State<UnsupportedDevicePage> {
   @override
   Widget build(BuildContext context) {
-    kUseDefaultOverlays(context, statusBarBrightness: context.theme.brightness);
+    context.withDefaultOverlays(statusBarBrightness: context.theme.brightness);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

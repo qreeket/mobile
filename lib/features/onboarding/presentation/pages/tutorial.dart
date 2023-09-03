@@ -32,8 +32,7 @@ class _TutorialPageState extends State<TutorialPage>
 
   @override
   Widget build(BuildContext context) {
-    kUseDefaultOverlays(
-      context,
+    context.withDefaultOverlays(
       statusBarBrightness: context.theme.brightness,
       navigationBarColor:
           context.colorScheme.primary.generateColorShades().last,
@@ -132,10 +131,10 @@ class _TutorialPageState extends State<TutorialPage>
                     onTap: () => isFirstPage
                         ? _pageController.nextPage(
                             duration: kDurationFast, curve: Curves.easeInOut)
-                        : context.navigator.pushNamedAndRemoveUntil(
-                            AppRouter.welcomeRoute,
-                            (route) =>
-                                false)).top(24).align(Alignment.bottomRight),
+                        : context.navigator.pushNamed/*AndRemoveUntil*/(
+                            AppRouter.voiceCallRoute,
+                            /*(route) =>
+                                false*/)).top(24).align(Alignment.bottomRight),
               ],
             ),
           ),

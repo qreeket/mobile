@@ -1,1 +1,2 @@
--keep class io.qcodelabsllc.qreeket.BuildConfig { *; }
+-keep class **.zego.** { *; }
+-keep class **.qcodelabsllc.qreeket.BuildConfig { *; }

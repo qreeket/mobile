@@ -11,7 +11,7 @@ import 'package:mobile/core/routing/router.dart';
 import 'package:mobile/core/utils/constants.dart';
 import 'package:mobile/core/utils/validator.dart';
 import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
-import 'package:mobile/features/qreeket/presentation/manager/core_bloc.dart';
+import 'package:mobile/features/core/presentation/manager/core_bloc.dart';
 import 'package:mobile/generated/assets.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/group.pb.dart';

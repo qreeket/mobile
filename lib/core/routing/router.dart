@@ -4,13 +4,15 @@ import 'package:mobile/features/common/presentation/pages/no.internet.dart';
 import 'package:mobile/features/common/presentation/pages/unsupported.device.dart';
 import 'package:mobile/features/groups/presentation/pages/create.channel.dart';
 import 'package:mobile/features/groups/presentation/pages/create.group.dart';
+import 'package:mobile/features/messaging/presentation/pages/video.call.dart';
+import 'package:mobile/features/messaging/presentation/pages/voice.call.dart';
 import 'package:mobile/features/onboarding/presentation/pages/auth/phone.verification.dart';
 import 'package:mobile/features/onboarding/presentation/pages/auth/register.account.dart';
 import 'package:mobile/features/onboarding/presentation/pages/login.dart';
 import 'package:mobile/features/onboarding/presentation/pages/reset.password.dart';
 import 'package:mobile/features/onboarding/presentation/pages/social.auth.dart';
 import 'package:mobile/features/onboarding/presentation/pages/tutorial.dart';
-import 'package:mobile/features/qreeket/presentation/pages/home.dart';
+import 'package:mobile/features/core/presentation/pages/home.dart';
 import 'package:mobile/generated/assets.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -59,6 +61,12 @@ final class AppRouterConfig {
             builder: (_) =>
                 CreateChannelPage(group: settings.arguments as Group),
             settings: settings);
+      case AppRouter.voiceCallRoute:
+        return MaterialWithModalsPageRoute(
+            builder: (_) => const VoiceCallPage(), settings: settings);
+      case AppRouter.videoCallRoute:
+        return MaterialWithModalsPageRoute(
+            builder: (_) => const VideoCallPage(), settings: settings);
     }
 
     return MaterialWithModalsPageRoute(
@@ -78,7 +86,7 @@ final class AppRouterConfig {
   static Route<dynamic> _initialRouteBuilder(RouteSettings? settings) =>
       MaterialWithModalsPageRoute(
           builder: (context) {
-            kUseDefaultOverlays(context,
+            context.withDefaultOverlays(
                 statusBarBrightness: context.theme.brightness);
             return Scaffold(
               body: Builder(
@@ -113,4 +121,8 @@ sealed class AppRouter {
   static const manageSubscriptionRoute = '/auth/manage-subscription'; // todo
   static const unsupportedDeviceRoute = '/states/unsupported-device';
   static const noInternetRoute = '/states/no-internet';
+
+  /// messaging
+  static const voiceCallRoute = 'messaging/voice-call';
+  static const videoCallRoute = 'messaging/video-call';
 }

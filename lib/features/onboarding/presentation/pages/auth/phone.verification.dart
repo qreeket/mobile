@@ -129,7 +129,7 @@ class _PhoneNumberVerificationPageState
                       controller: _pinController,
                       defaultPinTheme: _pinTheme,
                       autofocus: true,
-                      separator: const SizedBox(width: 16),
+                      separatorBuilder: (_) => const SizedBox(width: 16),
                       focusedPinTheme: _pinTheme.copyWith(
                         decoration: BoxDecoration(
                           color: context.colorScheme.surface,

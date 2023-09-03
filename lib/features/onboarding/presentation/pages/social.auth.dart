@@ -26,8 +26,7 @@ class _SocialAuthPageState extends State<SocialAuthPage>
 
   @override
   Widget build(BuildContext context) {
-    kUseDefaultOverlays(
-      context,
+    context.withDefaultOverlays(
       statusBarBrightness: context.invertedThemeBrightness,
       statusBarColor: context.colorScheme.primary.generateColorShades().last,
       navigationBarColor: context.colorScheme.background,

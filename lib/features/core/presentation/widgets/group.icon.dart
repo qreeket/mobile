@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/core/utils/constants.dart';
 import 'package:mobile/features/groups/presentation/manager/channel_bloc.dart';
-import 'package:mobile/features/qreeket/presentation/manager/core_bloc.dart';
+import 'package:mobile/features/core/presentation/manager/core_bloc.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
 import 'package:shared_utils/shared_utils.dart';
 

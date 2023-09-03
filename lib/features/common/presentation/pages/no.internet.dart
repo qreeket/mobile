@@ -17,7 +17,7 @@ class NoInternetPage extends StatefulWidget {
 class _NoInternetPageState extends State<NoInternetPage> {
   @override
   Widget build(BuildContext context) {
-    kUseDefaultOverlays(context, statusBarBrightness: context.theme.brightness);
+    context.withDefaultOverlays(statusBarBrightness: context.theme.brightness);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
