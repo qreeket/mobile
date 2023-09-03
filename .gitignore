@@ -50,3 +50,5 @@ pubspec.lock
 
 **/build/
 **/Podfile.lock
+
+.DS_Store
