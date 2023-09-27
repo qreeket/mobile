@@ -164,15 +164,19 @@ class _SocialAuthPageState extends State<SocialAuthPage>
 
               // main content
               Positioned.fill(
-                top: context.height * 0.27,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: AnimatedListView(
+                  padding: EdgeInsets.only(
+                      top: context.height * 0.22,
+                      left: 20,
+                      right: 20,
+                      bottom: context.mediaQuery.padding.bottom + 16),
                   children: [
                     // app logo & name
                     AnimatedRow(
                       children: [
-                        Assets.imgAppLogo.asAssetImage(size: 36).right(16),
+                        Assets.imgAppLogo
+                            .asAssetImage(height: 36, fit: BoxFit.contain)
+                            .right(12),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
@@ -257,7 +261,7 @@ class _SocialAuthPageState extends State<SocialAuthPage>
                       ),
                     ).centered(),
 
-                    const Spacer(),
+                    // const Spacer(),
 
                     // disclaimer
                     GestureDetector(
@@ -284,7 +288,7 @@ class _SocialAuthPageState extends State<SocialAuthPage>
                       ).top(24),
                     ),
                   ],
-                ).horizontal(20),
+                ),
               ),
             ],
           ),

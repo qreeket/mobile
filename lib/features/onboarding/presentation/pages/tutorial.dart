@@ -17,17 +17,17 @@ class _TutorialPageState extends State<TutorialPage>
     with TickerProviderStateMixin {
   final _pageController = PageController(),
       _animations = [
-        Assets.animCollaborate,
         Assets.animShareIdeas,
+        Assets.animStudentStudying,
       ];
   var _currentPage = 0;
   late final _titles = [
-        context.localizer.onboardingPage1Title,
         context.localizer.onboardingPage2Title,
+        context.localizer.onboardingPage1Title,
       ],
       _descriptions = [
-        context.localizer.onboardingPage1Subhead,
         context.localizer.onboardingPage2Subhead,
+        context.localizer.onboardingPage1Subhead,
       ];
 
   @override
@@ -131,10 +131,10 @@ class _TutorialPageState extends State<TutorialPage>
                     onTap: () => isFirstPage
                         ? _pageController.nextPage(
                             duration: kDurationFast, curve: Curves.easeInOut)
-                        : context.navigator.pushNamed/*AndRemoveUntil*/(
-                            AppRouter.voiceCallRoute,
-                            /*(route) =>
-                                false*/)).top(24).align(Alignment.bottomRight),
+                        : context.navigator.pushNamedAndRemoveUntil(
+                            AppRouter.welcomeRoute,
+                            (route) =>
+                                false)).top(24).align(Alignment.bottomRight),
               ],
             ),
           ),

@@ -20,13 +20,13 @@ class Assets {
   static const String animProfilePicturePicker = 'assets/anim/profile_picture_picker.json';
   static const String animSayHi = 'assets/anim/say_hi.json';
   static const String animShareIdeas = 'assets/anim/share_ideas.json';
+  static const String animStudentStudying = 'assets/anim/student_studying.json';
   static const String animSuccess = 'assets/anim/success.json';
   static const String animUnderDev = 'assets/anim/under_dev.json';
   static const String animUnsupportedDevice = 'assets/anim/unsupported_device.json';
   static const String animUpgradeToPremium = 'assets/anim/upgrade_to_premium.json';
   static const String animUserLeaving = 'assets/anim/user_leaving.json';
   static const String animWimpusDiscordWaving = 'assets/anim/wimpus_discord_waving.json';
-  static const String assetsImgAppLogo = 'assets/img/app_logo.webp';
   static const String avatarsAdventurer0 = 'assets/avatars/adventurer-0.png';
   static const String avatarsAdventurer1 = 'assets/avatars/adventurer-1.png';
   static const String avatarsAdventurer10 = 'assets/avatars/adventurer-10.png';
@@ -67,6 +67,7 @@ class Assets {
   static const String brandBrandYoutube = 'assets/brand/brand_youtube.svg';
   static const String fontsFiracode = 'assets/fonts/firacode.ttf';
   static const String imgAppLogo = 'assets/img/app_logo.png';
+  static const String imgLogo = 'assets/img/logo.webp';
   static const String imgPremiumAccountBanner = 'assets/img/premium_account_banner.webp';
   static const String imgWorldMap = 'assets/img/world_map.svg';
 
