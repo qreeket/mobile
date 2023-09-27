@@ -3,7 +3,7 @@ import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/features/common/domain/repositories/security.dart';
 import 'package:mobile/features/onboarding/domain/repositories/auth.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
-import 'package:protobuf_google/protobuf_google.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:shared_utils/shared_utils.dart';
 
 class AuthCubit extends Cubit<BlocState> {

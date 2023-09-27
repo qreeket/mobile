@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
-import 'package:protobuf_google/protobuf_google.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 
 abstract class BaseAuthRepository {
   Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>

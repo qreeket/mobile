@@ -1,6 +1,7 @@
 get-protos-submodule:
 	@echo "initializing protos submodule..." && \
-	git submodule add --progress --force https://github.com/qreeket/protos.git protos
+	git submodule add --progress --force https://github.com/qreeket/protos.git protos && \
+	git submodule update --remote --merge protos
 
 update-protos-submodule:
 	@echo "initializing protos submodule..." && \

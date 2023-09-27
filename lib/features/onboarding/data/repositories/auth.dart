@@ -7,7 +7,7 @@ import 'package:mobile/features/onboarding/data/local/auth.dart';
 import 'package:mobile/features/onboarding/data/remote/auth.dart';
 import 'package:mobile/features/onboarding/domain/repositories/auth.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
-import 'package:protobuf_google/protobuf_google.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 
 /// This is the implementation of the [BaseAuthRepository] interface.
 @Injectable(as: BaseAuthRepository)

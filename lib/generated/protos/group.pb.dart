@@ -1,43 +1,47 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: group.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'package:protobuf_google/protobuf_google.dart' as $10;
-
+import 'common.pb.dart' as $0;
 import 'group.pbenum.dart';
 
 export 'group.pbenum.dart';
 
 class DeleteGroupRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteGroupRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..hasRequiredFields = false
-  ;
-
-  DeleteGroupRequest._() : super();
   factory DeleteGroupRequest({
     $core.String? group,
     $core.String? admin,
   }) {
-    final _result = create();
+    final $result = create();
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
-    return _result;
+    return $result;
   }
+  DeleteGroupRequest._() : super();
   factory DeleteGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'group')
+    ..aOS(2, _omitFieldNames ? '' : 'admin')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -47,8 +51,10 @@ class DeleteGroupRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteGroupRequest copyWith(void Function(DeleteGroupRequest) updates) => super.copyWith((message) => updates(message as DeleteGroupRequest)) as DeleteGroupRequest; // ignore: deprecated_member_use
+  DeleteGroupRequest copyWith(void Function(DeleteGroupRequest) updates) => super.copyWith((message) => updates(message as DeleteGroupRequest)) as DeleteGroupRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteGroupRequest create() => DeleteGroupRequest._();
   DeleteGroupRequest createEmptyInstance() => create();
@@ -77,33 +83,34 @@ class DeleteGroupRequest extends $pb.GeneratedMessage {
 }
 
 class ManageAdminRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ManageAdminRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..hasRequiredFields = false
-  ;
-
-  ManageAdminRequest._() : super();
   factory ManageAdminRequest({
     $core.String? group,
     $core.String? user,
     $core.String? admin,
   }) {
-    final _result = create();
+    final $result = create();
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
-    return _result;
+    return $result;
   }
+  ManageAdminRequest._() : super();
   factory ManageAdminRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManageAdminRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManageAdminRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'group')
+    ..aOS(2, _omitFieldNames ? '' : 'user')
+    ..aOS(3, _omitFieldNames ? '' : 'admin')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -113,8 +120,10 @@ class ManageAdminRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ManageAdminRequest copyWith(void Function(ManageAdminRequest) updates) => super.copyWith((message) => updates(message as ManageAdminRequest)) as ManageAdminRequest; // ignore: deprecated_member_use
+  ManageAdminRequest copyWith(void Function(ManageAdminRequest) updates) => super.copyWith((message) => updates(message as ManageAdminRequest)) as ManageAdminRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ManageAdminRequest create() => ManageAdminRequest._();
   ManageAdminRequest createEmptyInstance() => create();
@@ -158,39 +167,40 @@ enum ManageGroupOrChannel_Payload {
 }
 
 class ManageGroupOrChannel extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, ManageGroupOrChannel_Payload> _ManageGroupOrChannel_PayloadByTag = {
-    2 : ManageGroupOrChannel_Payload.channel,
-    3 : ManageGroupOrChannel_Payload.group,
-    0 : ManageGroupOrChannel_Payload.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ManageGroupOrChannel', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..oo(0, [2, 3])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..hasRequiredFields = false
-  ;
-
-  ManageGroupOrChannel._() : super();
   factory ManageGroupOrChannel({
     $core.String? user,
     $core.String? channel,
     $core.String? group,
   }) {
-    final _result = create();
+    final $result = create();
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
     if (channel != null) {
-      _result.channel = channel;
+      $result.channel = channel;
     }
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
-    return _result;
+    return $result;
   }
+  ManageGroupOrChannel._() : super();
   factory ManageGroupOrChannel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManageGroupOrChannel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, ManageGroupOrChannel_Payload> _ManageGroupOrChannel_PayloadByTag = {
+    2 : ManageGroupOrChannel_Payload.channel,
+    3 : ManageGroupOrChannel_Payload.group,
+    0 : ManageGroupOrChannel_Payload.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManageGroupOrChannel', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..oo(0, [2, 3])
+    ..aOS(1, _omitFieldNames ? '' : 'user')
+    ..aOS(2, _omitFieldNames ? '' : 'channel')
+    ..aOS(3, _omitFieldNames ? '' : 'group')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -200,8 +210,10 @@ class ManageGroupOrChannel extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ManageGroupOrChannel copyWith(void Function(ManageGroupOrChannel) updates) => super.copyWith((message) => updates(message as ManageGroupOrChannel)) as ManageGroupOrChannel; // ignore: deprecated_member_use
+  ManageGroupOrChannel copyWith(void Function(ManageGroupOrChannel) updates) => super.copyWith((message) => updates(message as ManageGroupOrChannel)) as ManageGroupOrChannel;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ManageGroupOrChannel create() => ManageGroupOrChannel._();
   ManageGroupOrChannel createEmptyInstance() => create();
@@ -248,44 +260,45 @@ enum ManageGroupOrChannelRequest_Payload {
 }
 
 class ManageGroupOrChannelRequest extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, ManageGroupOrChannelRequest_Payload> _ManageGroupOrChannelRequest_PayloadByTag = {
-    1 : ManageGroupOrChannelRequest_Payload.channel,
-    2 : ManageGroupOrChannelRequest_Payload.group,
-    0 : ManageGroupOrChannelRequest_Payload.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ManageGroupOrChannelRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..oo(0, [1, 2])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..hasRequiredFields = false
-  ;
-
-  ManageGroupOrChannelRequest._() : super();
   factory ManageGroupOrChannelRequest({
     $core.String? channel,
     $core.String? group,
     $core.String? user,
     $core.String? admin,
   }) {
-    final _result = create();
+    final $result = create();
     if (channel != null) {
-      _result.channel = channel;
+      $result.channel = channel;
     }
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
-    return _result;
+    return $result;
   }
+  ManageGroupOrChannelRequest._() : super();
   factory ManageGroupOrChannelRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManageGroupOrChannelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, ManageGroupOrChannelRequest_Payload> _ManageGroupOrChannelRequest_PayloadByTag = {
+    1 : ManageGroupOrChannelRequest_Payload.channel,
+    2 : ManageGroupOrChannelRequest_Payload.group,
+    0 : ManageGroupOrChannelRequest_Payload.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManageGroupOrChannelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOS(1, _omitFieldNames ? '' : 'channel')
+    ..aOS(2, _omitFieldNames ? '' : 'group')
+    ..aOS(3, _omitFieldNames ? '' : 'user')
+    ..aOS(4, _omitFieldNames ? '' : 'admin')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -295,8 +308,10 @@ class ManageGroupOrChannelRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ManageGroupOrChannelRequest copyWith(void Function(ManageGroupOrChannelRequest) updates) => super.copyWith((message) => updates(message as ManageGroupOrChannelRequest)) as ManageGroupOrChannelRequest; // ignore: deprecated_member_use
+  ManageGroupOrChannelRequest copyWith(void Function(ManageGroupOrChannelRequest) updates) => super.copyWith((message) => updates(message as ManageGroupOrChannelRequest)) as ManageGroupOrChannelRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ManageGroupOrChannelRequest create() => ManageGroupOrChannelRequest._();
   ManageGroupOrChannelRequest createEmptyInstance() => create();
@@ -346,38 +361,39 @@ class ManageGroupOrChannelRequest extends $pb.GeneratedMessage {
 }
 
 class ManageChannelSubscriptionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ManageChannelSubscriptionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accept')
-    ..hasRequiredFields = false
-  ;
-
-  ManageChannelSubscriptionRequest._() : super();
   factory ManageChannelSubscriptionRequest({
     $core.String? channel,
     $core.String? user,
     $core.String? token,
     $core.bool? accept,
   }) {
-    final _result = create();
+    final $result = create();
     if (channel != null) {
-      _result.channel = channel;
+      $result.channel = channel;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
     if (token != null) {
-      _result.token = token;
+      $result.token = token;
     }
     if (accept != null) {
-      _result.accept = accept;
+      $result.accept = accept;
     }
-    return _result;
+    return $result;
   }
+  ManageChannelSubscriptionRequest._() : super();
   factory ManageChannelSubscriptionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManageChannelSubscriptionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManageChannelSubscriptionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'channel')
+    ..aOS(2, _omitFieldNames ? '' : 'user')
+    ..aOS(3, _omitFieldNames ? '' : 'token')
+    ..aOB(4, _omitFieldNames ? '' : 'accept')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -387,8 +403,10 @@ class ManageChannelSubscriptionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ManageChannelSubscriptionRequest copyWith(void Function(ManageChannelSubscriptionRequest) updates) => super.copyWith((message) => updates(message as ManageChannelSubscriptionRequest)) as ManageChannelSubscriptionRequest; // ignore: deprecated_member_use
+  ManageChannelSubscriptionRequest copyWith(void Function(ManageChannelSubscriptionRequest) updates) => super.copyWith((message) => updates(message as ManageChannelSubscriptionRequest)) as ManageChannelSubscriptionRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ManageChannelSubscriptionRequest create() => ManageChannelSubscriptionRequest._();
   ManageChannelSubscriptionRequest createEmptyInstance() => create();
@@ -435,23 +453,24 @@ class ManageChannelSubscriptionRequest extends $pb.GeneratedMessage {
 }
 
 class ChannelSubscriptionList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChannelSubscriptionList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<ChannelSubscription>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscriptions', $pb.PbFieldType.PM, subBuilder: ChannelSubscription.create)
-    ..hasRequiredFields = false
-  ;
-
-  ChannelSubscriptionList._() : super();
   factory ChannelSubscriptionList({
     $core.Iterable<ChannelSubscription>? subscriptions,
   }) {
-    final _result = create();
+    final $result = create();
     if (subscriptions != null) {
-      _result.subscriptions.addAll(subscriptions);
+      $result.subscriptions.addAll(subscriptions);
     }
-    return _result;
+    return $result;
   }
+  ChannelSubscriptionList._() : super();
   factory ChannelSubscriptionList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChannelSubscriptionList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChannelSubscriptionList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<ChannelSubscription>(1, _omitFieldNames ? '' : 'subscriptions', $pb.PbFieldType.PM, subBuilder: ChannelSubscription.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -461,8 +480,10 @@ class ChannelSubscriptionList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChannelSubscriptionList copyWith(void Function(ChannelSubscriptionList) updates) => super.copyWith((message) => updates(message as ChannelSubscriptionList)) as ChannelSubscriptionList; // ignore: deprecated_member_use
+  ChannelSubscriptionList copyWith(void Function(ChannelSubscriptionList) updates) => super.copyWith((message) => updates(message as ChannelSubscriptionList)) as ChannelSubscriptionList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChannelSubscriptionList create() => ChannelSubscriptionList._();
   ChannelSubscriptionList createEmptyInstance() => create();
@@ -476,16 +497,6 @@ class ChannelSubscriptionList extends $pb.GeneratedMessage {
 }
 
 class ChannelSubscription extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChannelSubscription', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOM<Channel>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel', subBuilder: Channel.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..e<ChannelOrGroupInviteStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChannelOrGroupInviteStatus.pending, valueOf: ChannelOrGroupInviteStatus.valueOf, enumValues: ChannelOrGroupInviteStatus.values)
-    ..hasRequiredFields = false
-  ;
-
-  ChannelSubscription._() : super();
   factory ChannelSubscription({
     $core.String? id,
     Channel? channel,
@@ -493,26 +504,37 @@ class ChannelSubscription extends $pb.GeneratedMessage {
     $core.String? token,
     ChannelOrGroupInviteStatus? status,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (channel != null) {
-      _result.channel = channel;
+      $result.channel = channel;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
     if (token != null) {
-      _result.token = token;
+      $result.token = token;
     }
     if (status != null) {
-      _result.status = status;
+      $result.status = status;
     }
-    return _result;
+    return $result;
   }
+  ChannelSubscription._() : super();
   factory ChannelSubscription.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChannelSubscription.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChannelSubscription', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<Channel>(2, _omitFieldNames ? '' : 'channel', subBuilder: Channel.create)
+    ..aOS(3, _omitFieldNames ? '' : 'user')
+    ..aOS(4, _omitFieldNames ? '' : 'token')
+    ..e<ChannelOrGroupInviteStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChannelOrGroupInviteStatus.pending, valueOf: ChannelOrGroupInviteStatus.valueOf, enumValues: ChannelOrGroupInviteStatus.values)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -522,8 +544,10 @@ class ChannelSubscription extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChannelSubscription copyWith(void Function(ChannelSubscription) updates) => super.copyWith((message) => updates(message as ChannelSubscription)) as ChannelSubscription; // ignore: deprecated_member_use
+  ChannelSubscription copyWith(void Function(ChannelSubscription) updates) => super.copyWith((message) => updates(message as ChannelSubscription)) as ChannelSubscription;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChannelSubscription create() => ChannelSubscription._();
   ChannelSubscription createEmptyInstance() => create();
@@ -581,33 +605,34 @@ class ChannelSubscription extends $pb.GeneratedMessage {
 }
 
 class RevokeGroupInviteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RevokeGroupInviteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId', protoName: 'inviteId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..hasRequiredFields = false
-  ;
-
-  RevokeGroupInviteRequest._() : super();
   factory RevokeGroupInviteRequest({
     $core.String? inviteId,
     $core.String? token,
     $core.String? admin,
   }) {
-    final _result = create();
+    final $result = create();
     if (inviteId != null) {
-      _result.inviteId = inviteId;
+      $result.inviteId = inviteId;
     }
     if (token != null) {
-      _result.token = token;
+      $result.token = token;
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
-    return _result;
+    return $result;
   }
+  RevokeGroupInviteRequest._() : super();
   factory RevokeGroupInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RevokeGroupInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RevokeGroupInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'inviteId', protoName: 'inviteId')
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOS(3, _omitFieldNames ? '' : 'admin')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -617,8 +642,10 @@ class RevokeGroupInviteRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RevokeGroupInviteRequest copyWith(void Function(RevokeGroupInviteRequest) updates) => super.copyWith((message) => updates(message as RevokeGroupInviteRequest)) as RevokeGroupInviteRequest; // ignore: deprecated_member_use
+  RevokeGroupInviteRequest copyWith(void Function(RevokeGroupInviteRequest) updates) => super.copyWith((message) => updates(message as RevokeGroupInviteRequest)) as RevokeGroupInviteRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RevokeGroupInviteRequest create() => RevokeGroupInviteRequest._();
   RevokeGroupInviteRequest createEmptyInstance() => create();
@@ -656,28 +683,29 @@ class RevokeGroupInviteRequest extends $pb.GeneratedMessage {
 }
 
 class ChannelSubscriptionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChannelSubscriptionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..hasRequiredFields = false
-  ;
-
-  ChannelSubscriptionRequest._() : super();
   factory ChannelSubscriptionRequest({
     $core.String? channel,
     $core.String? user,
   }) {
-    final _result = create();
+    final $result = create();
     if (channel != null) {
-      _result.channel = channel;
+      $result.channel = channel;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
-    return _result;
+    return $result;
   }
+  ChannelSubscriptionRequest._() : super();
   factory ChannelSubscriptionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChannelSubscriptionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChannelSubscriptionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'channel')
+    ..aOS(2, _omitFieldNames ? '' : 'user')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -687,8 +715,10 @@ class ChannelSubscriptionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChannelSubscriptionRequest copyWith(void Function(ChannelSubscriptionRequest) updates) => super.copyWith((message) => updates(message as ChannelSubscriptionRequest)) as ChannelSubscriptionRequest; // ignore: deprecated_member_use
+  ChannelSubscriptionRequest copyWith(void Function(ChannelSubscriptionRequest) updates) => super.copyWith((message) => updates(message as ChannelSubscriptionRequest)) as ChannelSubscriptionRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChannelSubscriptionRequest create() => ChannelSubscriptionRequest._();
   ChannelSubscriptionRequest createEmptyInstance() => create();
@@ -717,38 +747,39 @@ class ChannelSubscriptionRequest extends $pb.GeneratedMessage {
 }
 
 class GroupInviteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupInviteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..hasRequiredFields = false
-  ;
-
-  GroupInviteRequest._() : super();
   factory GroupInviteRequest({
     $core.String? group,
     $core.String? user,
     $core.Iterable<$core.String>? channels,
     $core.String? admin,
   }) {
-    final _result = create();
+    final $result = create();
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
     if (channels != null) {
-      _result.channels.addAll(channels);
+      $result.channels.addAll(channels);
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
-    return _result;
+    return $result;
   }
+  GroupInviteRequest._() : super();
   factory GroupInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'group')
+    ..aOS(2, _omitFieldNames ? '' : 'user')
+    ..pPS(3, _omitFieldNames ? '' : 'channels')
+    ..aOS(4, _omitFieldNames ? '' : 'admin')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -758,8 +789,10 @@ class GroupInviteRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupInviteRequest copyWith(void Function(GroupInviteRequest) updates) => super.copyWith((message) => updates(message as GroupInviteRequest)) as GroupInviteRequest; // ignore: deprecated_member_use
+  GroupInviteRequest copyWith(void Function(GroupInviteRequest) updates) => super.copyWith((message) => updates(message as GroupInviteRequest)) as GroupInviteRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupInviteRequest create() => GroupInviteRequest._();
   GroupInviteRequest createEmptyInstance() => create();
@@ -800,38 +833,39 @@ class GroupInviteRequest extends $pb.GeneratedMessage {
 }
 
 class ManageGroupInviteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ManageGroupInviteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId', protoName: 'inviteId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accept')
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels')
-    ..hasRequiredFields = false
-  ;
-
-  ManageGroupInviteRequest._() : super();
   factory ManageGroupInviteRequest({
     $core.String? inviteId,
     $core.String? token,
     $core.bool? accept,
     $core.Iterable<$core.String>? channels,
   }) {
-    final _result = create();
+    final $result = create();
     if (inviteId != null) {
-      _result.inviteId = inviteId;
+      $result.inviteId = inviteId;
     }
     if (token != null) {
-      _result.token = token;
+      $result.token = token;
     }
     if (accept != null) {
-      _result.accept = accept;
+      $result.accept = accept;
     }
     if (channels != null) {
-      _result.channels.addAll(channels);
+      $result.channels.addAll(channels);
     }
-    return _result;
+    return $result;
   }
+  ManageGroupInviteRequest._() : super();
   factory ManageGroupInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManageGroupInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManageGroupInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'inviteId', protoName: 'inviteId')
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOB(3, _omitFieldNames ? '' : 'accept')
+    ..pPS(4, _omitFieldNames ? '' : 'channels')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -841,8 +875,10 @@ class ManageGroupInviteRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ManageGroupInviteRequest copyWith(void Function(ManageGroupInviteRequest) updates) => super.copyWith((message) => updates(message as ManageGroupInviteRequest)) as ManageGroupInviteRequest; // ignore: deprecated_member_use
+  ManageGroupInviteRequest copyWith(void Function(ManageGroupInviteRequest) updates) => super.copyWith((message) => updates(message as ManageGroupInviteRequest)) as ManageGroupInviteRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ManageGroupInviteRequest create() => ManageGroupInviteRequest._();
   ManageGroupInviteRequest createEmptyInstance() => create();
@@ -883,23 +919,24 @@ class ManageGroupInviteRequest extends $pb.GeneratedMessage {
 }
 
 class GroupList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<Group>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
-    ..hasRequiredFields = false
-  ;
-
-  GroupList._() : super();
   factory GroupList({
     $core.Iterable<Group>? groups,
   }) {
-    final _result = create();
+    final $result = create();
     if (groups != null) {
-      _result.groups.addAll(groups);
+      $result.groups.addAll(groups);
     }
-    return _result;
+    return $result;
   }
+  GroupList._() : super();
   factory GroupList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<Group>(1, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -909,8 +946,10 @@ class GroupList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupList copyWith(void Function(GroupList) updates) => super.copyWith((message) => updates(message as GroupList)) as GroupList; // ignore: deprecated_member_use
+  GroupList copyWith(void Function(GroupList) updates) => super.copyWith((message) => updates(message as GroupList)) as GroupList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupList create() => GroupList._();
   GroupList createEmptyInstance() => create();
@@ -924,22 +963,6 @@ class GroupList extends $pb.GeneratedMessage {
 }
 
 class Channel extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Channel', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..pc<Subscriber>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribers', $pb.PbFieldType.PM, subBuilder: Subscriber.create)
-    ..pPS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'muted')
-    ..e<ChannelType>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ChannelType.public, valueOf: ChannelType.valueOf, enumValues: ChannelType.values)
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner')
-    ..aOM<$10.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'created', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updated', subBuilder: $10.Timestamp.create)
-    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon')
-    ..hasRequiredFields = false
-  ;
-
-  Channel._() : super();
   factory Channel({
     $core.String? name,
     $core.String? description,
@@ -947,50 +970,67 @@ class Channel extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? muted,
     ChannelType? type,
     $core.String? owner,
-    $10.Timestamp? created,
-    $10.Timestamp? updated,
+    $0.Timestamp? created,
+    $0.Timestamp? updated,
     $core.String? id,
     $core.String? group,
     $core.String? icon,
   }) {
-    final _result = create();
+    final $result = create();
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (subscribers != null) {
-      _result.subscribers.addAll(subscribers);
+      $result.subscribers.addAll(subscribers);
     }
     if (muted != null) {
-      _result.muted.addAll(muted);
+      $result.muted.addAll(muted);
     }
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (owner != null) {
-      _result.owner = owner;
+      $result.owner = owner;
     }
     if (created != null) {
-      _result.created = created;
+      $result.created = created;
     }
     if (updated != null) {
-      _result.updated = updated;
+      $result.updated = updated;
     }
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (icon != null) {
-      _result.icon = icon;
+      $result.icon = icon;
     }
-    return _result;
+    return $result;
   }
+  Channel._() : super();
   factory Channel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Channel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Channel', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..pc<Subscriber>(6, _omitFieldNames ? '' : 'subscribers', $pb.PbFieldType.PM, subBuilder: Subscriber.create)
+    ..pPS(9, _omitFieldNames ? '' : 'muted')
+    ..e<ChannelType>(10, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ChannelType.public, valueOf: ChannelType.valueOf, enumValues: ChannelType.values)
+    ..aOS(11, _omitFieldNames ? '' : 'owner')
+    ..aOM<$0.Timestamp>(12, _omitFieldNames ? '' : 'created', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(13, _omitFieldNames ? '' : 'updated', subBuilder: $0.Timestamp.create)
+    ..aOS(14, _omitFieldNames ? '' : 'id')
+    ..aOS(15, _omitFieldNames ? '' : 'group')
+    ..aOS(16, _omitFieldNames ? '' : 'icon')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1000,8 +1040,10 @@ class Channel extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Channel copyWith(void Function(Channel) updates) => super.copyWith((message) => updates(message as Channel)) as Channel; // ignore: deprecated_member_use
+  Channel copyWith(void Function(Channel) updates) => super.copyWith((message) => updates(message as Channel)) as Channel;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Channel create() => Channel._();
   Channel createEmptyInstance() => create();
@@ -1053,26 +1095,26 @@ class Channel extends $pb.GeneratedMessage {
   void clearOwner() => clearField(11);
 
   @$pb.TagNumber(12)
-  $10.Timestamp get created => $_getN(6);
+  $0.Timestamp get created => $_getN(6);
   @$pb.TagNumber(12)
-  set created($10.Timestamp v) { setField(12, v); }
+  set created($0.Timestamp v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasCreated() => $_has(6);
   @$pb.TagNumber(12)
   void clearCreated() => clearField(12);
   @$pb.TagNumber(12)
-  $10.Timestamp ensureCreated() => $_ensure(6);
+  $0.Timestamp ensureCreated() => $_ensure(6);
 
   @$pb.TagNumber(13)
-  $10.Timestamp get updated => $_getN(7);
+  $0.Timestamp get updated => $_getN(7);
   @$pb.TagNumber(13)
-  set updated($10.Timestamp v) { setField(13, v); }
+  set updated($0.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasUpdated() => $_has(7);
   @$pb.TagNumber(13)
   void clearUpdated() => clearField(13);
   @$pb.TagNumber(13)
-  $10.Timestamp ensureUpdated() => $_ensure(7);
+  $0.Timestamp ensureUpdated() => $_ensure(7);
 
   @$pb.TagNumber(14)
   $core.String get id => $_getSZ(8);
@@ -1103,23 +1145,24 @@ class Channel extends $pb.GeneratedMessage {
 }
 
 class ChannelList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChannelList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<Channel>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels', $pb.PbFieldType.PM, subBuilder: Channel.create)
-    ..hasRequiredFields = false
-  ;
-
-  ChannelList._() : super();
   factory ChannelList({
     $core.Iterable<Channel>? channels,
   }) {
-    final _result = create();
+    final $result = create();
     if (channels != null) {
-      _result.channels.addAll(channels);
+      $result.channels.addAll(channels);
     }
-    return _result;
+    return $result;
   }
+  ChannelList._() : super();
   factory ChannelList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChannelList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChannelList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<Channel>(1, _omitFieldNames ? '' : 'channels', $pb.PbFieldType.PM, subBuilder: Channel.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1129,8 +1172,10 @@ class ChannelList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChannelList copyWith(void Function(ChannelList) updates) => super.copyWith((message) => updates(message as ChannelList)) as ChannelList; // ignore: deprecated_member_use
+  ChannelList copyWith(void Function(ChannelList) updates) => super.copyWith((message) => updates(message as ChannelList)) as ChannelList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChannelList create() => ChannelList._();
   ChannelList createEmptyInstance() => create();
@@ -1144,18 +1189,6 @@ class ChannelList extends $pb.GeneratedMessage {
 }
 
 class GroupInvite extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupInvite', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..e<ChannelOrGroupInviteStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChannelOrGroupInviteStatus.pending, valueOf: ChannelOrGroupInviteStatus.valueOf, enumValues: ChannelOrGroupInviteStatus.values)
-    ..aOM<Group>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group', subBuilder: Group.create)
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
-    ..hasRequiredFields = false
-  ;
-
-  GroupInvite._() : super();
   factory GroupInvite({
     $core.Iterable<$core.String>? channels,
     $core.String? admin,
@@ -1165,32 +1198,45 @@ class GroupInvite extends $pb.GeneratedMessage {
     Group? group,
     $core.String? user,
   }) {
-    final _result = create();
+    final $result = create();
     if (channels != null) {
-      _result.channels.addAll(channels);
+      $result.channels.addAll(channels);
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
     if (token != null) {
-      _result.token = token;
+      $result.token = token;
     }
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (status != null) {
-      _result.status = status;
+      $result.status = status;
     }
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (user != null) {
-      _result.user = user;
+      $result.user = user;
     }
-    return _result;
+    return $result;
   }
+  GroupInvite._() : super();
   factory GroupInvite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupInvite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupInvite', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'channels')
+    ..aOS(2, _omitFieldNames ? '' : 'admin')
+    ..aOS(3, _omitFieldNames ? '' : 'token')
+    ..aOS(4, _omitFieldNames ? '' : 'id')
+    ..e<ChannelOrGroupInviteStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChannelOrGroupInviteStatus.pending, valueOf: ChannelOrGroupInviteStatus.valueOf, enumValues: ChannelOrGroupInviteStatus.values)
+    ..aOM<Group>(6, _omitFieldNames ? '' : 'group', subBuilder: Group.create)
+    ..aOS(7, _omitFieldNames ? '' : 'user')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1200,8 +1246,10 @@ class GroupInvite extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupInvite copyWith(void Function(GroupInvite) updates) => super.copyWith((message) => updates(message as GroupInvite)) as GroupInvite; // ignore: deprecated_member_use
+  GroupInvite copyWith(void Function(GroupInvite) updates) => super.copyWith((message) => updates(message as GroupInvite)) as GroupInvite;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupInvite create() => GroupInvite._();
   GroupInvite createEmptyInstance() => create();
@@ -1271,23 +1319,24 @@ class GroupInvite extends $pb.GeneratedMessage {
 }
 
 class GroupInviteList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupInviteList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<GroupInvite>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'invites', $pb.PbFieldType.PM, subBuilder: GroupInvite.create)
-    ..hasRequiredFields = false
-  ;
-
-  GroupInviteList._() : super();
   factory GroupInviteList({
     $core.Iterable<GroupInvite>? invites,
   }) {
-    final _result = create();
+    final $result = create();
     if (invites != null) {
-      _result.invites.addAll(invites);
+      $result.invites.addAll(invites);
     }
-    return _result;
+    return $result;
   }
+  GroupInviteList._() : super();
   factory GroupInviteList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupInviteList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupInviteList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<GroupInvite>(1, _omitFieldNames ? '' : 'invites', $pb.PbFieldType.PM, subBuilder: GroupInvite.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1297,8 +1346,10 @@ class GroupInviteList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupInviteList copyWith(void Function(GroupInviteList) updates) => super.copyWith((message) => updates(message as GroupInviteList)) as GroupInviteList; // ignore: deprecated_member_use
+  GroupInviteList copyWith(void Function(GroupInviteList) updates) => super.copyWith((message) => updates(message as GroupInviteList)) as GroupInviteList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupInviteList create() => GroupInviteList._();
   GroupInviteList createEmptyInstance() => create();
@@ -1312,19 +1363,6 @@ class GroupInviteList extends $pb.GeneratedMessage {
 }
 
 class CreateChannelRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateChannelRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon', $pb.PbFieldType.OY)
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..pc<Subscriber>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribers', $pb.PbFieldType.PM, subBuilder: Subscriber.create)
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'group')
-    ..e<ChannelType>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ChannelType.public, valueOf: ChannelType.valueOf, enumValues: ChannelType.values)
-    ..hasRequiredFields = false
-  ;
-
-  CreateChannelRequest._() : super();
   factory CreateChannelRequest({
     $core.String? name,
     $core.String? description,
@@ -1335,35 +1373,49 @@ class CreateChannelRequest extends $pb.GeneratedMessage {
     $core.String? group,
     ChannelType? type,
   }) {
-    final _result = create();
+    final $result = create();
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (icon != null) {
-      _result.icon = icon;
+      $result.icon = icon;
     }
     if (tags != null) {
-      _result.tags.addAll(tags);
+      $result.tags.addAll(tags);
     }
     if (subscribers != null) {
-      _result.subscribers.addAll(subscribers);
+      $result.subscribers.addAll(subscribers);
     }
     if (owner != null) {
-      _result.owner = owner;
+      $result.owner = owner;
     }
     if (group != null) {
-      _result.group = group;
+      $result.group = group;
     }
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
-    return _result;
+    return $result;
   }
+  CreateChannelRequest._() : super();
   factory CreateChannelRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateChannelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateChannelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'icon', $pb.PbFieldType.OY)
+    ..pPS(5, _omitFieldNames ? '' : 'tags')
+    ..pc<Subscriber>(6, _omitFieldNames ? '' : 'subscribers', $pb.PbFieldType.PM, subBuilder: Subscriber.create)
+    ..aOS(7, _omitFieldNames ? '' : 'owner')
+    ..aOS(8, _omitFieldNames ? '' : 'group')
+    ..e<ChannelType>(9, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ChannelType.public, valueOf: ChannelType.valueOf, enumValues: ChannelType.values)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1373,8 +1425,10 @@ class CreateChannelRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateChannelRequest copyWith(void Function(CreateChannelRequest) updates) => super.copyWith((message) => updates(message as CreateChannelRequest)) as CreateChannelRequest; // ignore: deprecated_member_use
+  CreateChannelRequest copyWith(void Function(CreateChannelRequest) updates) => super.copyWith((message) => updates(message as CreateChannelRequest)) as CreateChannelRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateChannelRequest create() => CreateChannelRequest._();
   CreateChannelRequest createEmptyInstance() => create();
@@ -1445,24 +1499,6 @@ class CreateChannelRequest extends $pb.GeneratedMessage {
 }
 
 class Group extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Group', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon')
-    ..pc<Channel>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels', $pb.PbFieldType.PM, subBuilder: Channel.create)
-    ..pc<Subscriber>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribers', $pb.PbFieldType.PM, subBuilder: Subscriber.create)
-    ..pPS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admins')
-    ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'banned')
-    ..pPS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'muted')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'link')
-    ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOM<$10.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'created', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updated', subBuilder: $10.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
-
-  Group._() : super();
   factory Group({
     $core.String? id,
     $core.String? name,
@@ -1475,53 +1511,72 @@ class Group extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? muted,
     $core.String? link,
     $core.Iterable<$core.String>? tags,
-    $10.Timestamp? created,
-    $10.Timestamp? updated,
+    $0.Timestamp? created,
+    $0.Timestamp? updated,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (icon != null) {
-      _result.icon = icon;
+      $result.icon = icon;
     }
     if (channels != null) {
-      _result.channels.addAll(channels);
+      $result.channels.addAll(channels);
     }
     if (subscribers != null) {
-      _result.subscribers.addAll(subscribers);
+      $result.subscribers.addAll(subscribers);
     }
     if (admins != null) {
-      _result.admins.addAll(admins);
+      $result.admins.addAll(admins);
     }
     if (banned != null) {
-      _result.banned.addAll(banned);
+      $result.banned.addAll(banned);
     }
     if (muted != null) {
-      _result.muted.addAll(muted);
+      $result.muted.addAll(muted);
     }
     if (link != null) {
-      _result.link = link;
+      $result.link = link;
     }
     if (tags != null) {
-      _result.tags.addAll(tags);
+      $result.tags.addAll(tags);
     }
     if (created != null) {
-      _result.created = created;
+      $result.created = created;
     }
     if (updated != null) {
-      _result.updated = updated;
+      $result.updated = updated;
     }
-    return _result;
+    return $result;
   }
+  Group._() : super();
   factory Group.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Group.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Group', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'icon')
+    ..pc<Channel>(5, _omitFieldNames ? '' : 'channels', $pb.PbFieldType.PM, subBuilder: Channel.create)
+    ..pc<Subscriber>(6, _omitFieldNames ? '' : 'subscribers', $pb.PbFieldType.PM, subBuilder: Subscriber.create)
+    ..pPS(7, _omitFieldNames ? '' : 'admins')
+    ..pPS(8, _omitFieldNames ? '' : 'banned')
+    ..pPS(9, _omitFieldNames ? '' : 'muted')
+    ..aOS(10, _omitFieldNames ? '' : 'link')
+    ..pPS(11, _omitFieldNames ? '' : 'tags')
+    ..aOM<$0.Timestamp>(13, _omitFieldNames ? '' : 'created', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(14, _omitFieldNames ? '' : 'updated', subBuilder: $0.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1531,8 +1586,10 @@ class Group extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Group copyWith(void Function(Group) updates) => super.copyWith((message) => updates(message as Group)) as Group; // ignore: deprecated_member_use
+  Group copyWith(void Function(Group) updates) => super.copyWith((message) => updates(message as Group)) as Group;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Group create() => Group._();
   Group createEmptyInstance() => create();
@@ -1605,61 +1662,62 @@ class Group extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(10);
 
   @$pb.TagNumber(13)
-  $10.Timestamp get created => $_getN(11);
+  $0.Timestamp get created => $_getN(11);
   @$pb.TagNumber(13)
-  set created($10.Timestamp v) { setField(13, v); }
+  set created($0.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasCreated() => $_has(11);
   @$pb.TagNumber(13)
   void clearCreated() => clearField(13);
   @$pb.TagNumber(13)
-  $10.Timestamp ensureCreated() => $_ensure(11);
+  $0.Timestamp ensureCreated() => $_ensure(11);
 
   @$pb.TagNumber(14)
-  $10.Timestamp get updated => $_getN(12);
+  $0.Timestamp get updated => $_getN(12);
   @$pb.TagNumber(14)
-  set updated($10.Timestamp v) { setField(14, v); }
+  set updated($0.Timestamp v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasUpdated() => $_has(12);
   @$pb.TagNumber(14)
   void clearUpdated() => clearField(14);
   @$pb.TagNumber(14)
-  $10.Timestamp ensureUpdated() => $_ensure(12);
+  $0.Timestamp ensureUpdated() => $_ensure(12);
 }
 
 class Subscriber extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Subscriber', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatar')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'online')
-    ..hasRequiredFields = false
-  ;
-
-  Subscriber._() : super();
   factory Subscriber({
     $core.String? id,
     $core.String? name,
     $core.String? avatar,
     $core.bool? online,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (avatar != null) {
-      _result.avatar = avatar;
+      $result.avatar = avatar;
     }
     if (online != null) {
-      _result.online = online;
+      $result.online = online;
     }
-    return _result;
+    return $result;
   }
+  Subscriber._() : super();
   factory Subscriber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Subscriber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Subscriber', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'avatar')
+    ..aOB(4, _omitFieldNames ? '' : 'online')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1669,8 +1727,10 @@ class Subscriber extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Subscriber copyWith(void Function(Subscriber) updates) => super.copyWith((message) => updates(message as Subscriber)) as Subscriber; // ignore: deprecated_member_use
+  Subscriber copyWith(void Function(Subscriber) updates) => super.copyWith((message) => updates(message as Subscriber)) as Subscriber;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Subscriber create() => Subscriber._();
   Subscriber createEmptyInstance() => create();
@@ -1717,16 +1777,6 @@ class Subscriber extends $pb.GeneratedMessage {
 }
 
 class CreateGroupRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateGroupRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon', $pb.PbFieldType.OY)
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..hasRequiredFields = false
-  ;
-
-  CreateGroupRequest._() : super();
   factory CreateGroupRequest({
     $core.String? name,
     $core.String? description,
@@ -1734,26 +1784,37 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? tags,
     $core.String? admin,
   }) {
-    final _result = create();
+    final $result = create();
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (icon != null) {
-      _result.icon = icon;
+      $result.icon = icon;
     }
     if (tags != null) {
-      _result.tags.addAll(tags);
+      $result.tags.addAll(tags);
     }
     if (admin != null) {
-      _result.admin = admin;
+      $result.admin = admin;
     }
-    return _result;
+    return $result;
   }
+  CreateGroupRequest._() : super();
   factory CreateGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'icon', $pb.PbFieldType.OY)
+    ..pPS(4, _omitFieldNames ? '' : 'tags')
+    ..aOS(6, _omitFieldNames ? '' : 'admin')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1763,8 +1824,10 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateGroupRequest copyWith(void Function(CreateGroupRequest) updates) => super.copyWith((message) => updates(message as CreateGroupRequest)) as CreateGroupRequest; // ignore: deprecated_member_use
+  CreateGroupRequest copyWith(void Function(CreateGroupRequest) updates) => super.copyWith((message) => updates(message as CreateGroupRequest)) as CreateGroupRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateGroupRequest create() => CreateGroupRequest._();
   CreateGroupRequest createEmptyInstance() => create();
@@ -1813,3 +1876,6 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   void clearAdmin() => clearField(6);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

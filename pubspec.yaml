@@ -12,6 +12,7 @@ dependency_overrides:
   google_fonts: ^5.1.0
   intl: ^0.18.0
   win32: ^3.0.0
+  protobuf: ^3.0.0
 
 dependencies:
   flutter:
@@ -46,7 +47,7 @@ dependencies:
   sentry_flutter: ^7.6.1
   geocoding:
   package_info_plus: ^4.1.0
-  geofence_service: ^4.0.0
+  geofence_service: ^5.0.0
   flutter_local_notifications: ^15.1.0+1
   webview_flutter_plus: ^0.3.0+2
   flutter_staggered_animations: ^1.1.1
@@ -77,6 +78,8 @@ dependencies:
   zego_uikit: ^2.9.1
   zego_uikit_prebuilt_call: ^3.12.1
   wakelock_windows: any
+  firebase_messaging: ^14.6.8
+  fixnum: ^1.1.0
 
 dev_dependencies:
   flutter_test:

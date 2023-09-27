@@ -5,14 +5,14 @@ import 'package:injectable/injectable.dart';
 import 'package:mobile/core/network/error.handler.dart';
 import 'package:mobile/core/utils/image.utils.dart';
 import 'package:mobile/features/common/domain/repositories/security.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
 import 'package:mobile/generated/protos/group_service.pbgrpc.dart';
-import 'package:protobuf_google/protobuf_google.dart';
 
 /// remote data source for group repository
 @injectable
 final class GroupRemoteDataSource {
-  final GroupChannelServiceClient _groupClient;
+  final GroupServiceClient _groupClient;
   final BaseSecurityRepository _securityRepository;
 
   const GroupRemoteDataSource(this._groupClient, this._securityRepository);

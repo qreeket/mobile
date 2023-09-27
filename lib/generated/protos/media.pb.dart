@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: media.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -13,39 +17,41 @@ import 'media.pbenum.dart';
 
 export 'media.pbenum.dart';
 
+/// UploadMediaRequest is the request for uploading media
 class UploadMediaRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadMediaRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'media', $pb.PbFieldType.OY)
-    ..e<MediaType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: MediaType.IMAGE, valueOf: MediaType.valueOf, enumValues: MediaType.values)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner')
-    ..hasRequiredFields = false
-  ;
-
-  UploadMediaRequest._() : super();
   factory UploadMediaRequest({
     $core.List<$core.int>? media,
     MediaType? type,
     $core.String? name,
     $core.String? owner,
   }) {
-    final _result = create();
+    final $result = create();
     if (media != null) {
-      _result.media = media;
+      $result.media = media;
     }
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (owner != null) {
-      _result.owner = owner;
+      $result.owner = owner;
     }
-    return _result;
+    return $result;
   }
+  UploadMediaRequest._() : super();
   factory UploadMediaRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadMediaRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadMediaRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'media', $pb.PbFieldType.OY)
+    ..e<MediaType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: MediaType.IMAGE, valueOf: MediaType.valueOf, enumValues: MediaType.values)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'owner')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -55,8 +61,10 @@ class UploadMediaRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UploadMediaRequest copyWith(void Function(UploadMediaRequest) updates) => super.copyWith((message) => updates(message as UploadMediaRequest)) as UploadMediaRequest; // ignore: deprecated_member_use
+  UploadMediaRequest copyWith(void Function(UploadMediaRequest) updates) => super.copyWith((message) => updates(message as UploadMediaRequest)) as UploadMediaRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UploadMediaRequest create() => UploadMediaRequest._();
   UploadMediaRequest createEmptyInstance() => create();
@@ -103,28 +111,29 @@ class UploadMediaRequest extends $pb.GeneratedMessage {
 }
 
 class UploadMediaResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadMediaResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
-
-  UploadMediaResponse._() : super();
   factory UploadMediaResponse({
     $core.String? url,
     $core.int? size,
   }) {
-    final _result = create();
+    final $result = create();
     if (url != null) {
-      _result.url = url;
+      $result.url = url;
     }
     if (size != null) {
-      _result.size = size;
+      $result.size = size;
     }
-    return _result;
+    return $result;
   }
+  UploadMediaResponse._() : super();
   factory UploadMediaResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadMediaResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadMediaResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'url')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'size', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -134,8 +143,10 @@ class UploadMediaResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UploadMediaResponse copyWith(void Function(UploadMediaResponse) updates) => super.copyWith((message) => updates(message as UploadMediaResponse)) as UploadMediaResponse; // ignore: deprecated_member_use
+  UploadMediaResponse copyWith(void Function(UploadMediaResponse) updates) => super.copyWith((message) => updates(message as UploadMediaResponse)) as UploadMediaResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UploadMediaResponse create() => UploadMediaResponse._();
   UploadMediaResponse createEmptyInstance() => create();
@@ -163,3 +174,6 @@ class UploadMediaResponse extends $pb.GeneratedMessage {
   void clearSize() => clearField(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

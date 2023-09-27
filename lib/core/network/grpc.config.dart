@@ -4,6 +4,7 @@ import 'package:mobile/core/network/token.interceptor.dart';
 import 'package:mobile/core/utils/env.dart';
 import 'package:mobile/generated/protos/auth_service.pbgrpc.dart';
 import 'package:mobile/generated/protos/group_service.pbgrpc.dart';
+import 'package:mobile/generated/protos/notification_service.pbgrpc.dart';
 import 'package:mobile/generated/protos/sms_service.pbgrpc.dart';
 
 class NetworkServerConfig {
@@ -29,8 +30,17 @@ class NetworkServerConfig {
       SmsServiceClient(createChannel(Env.kSmsClientHost, Env.kSmsClientPort),
           interceptors: _createInterceptors);
 
-  static GroupChannelServiceClient createGroupClient() =>
-      GroupChannelServiceClient(
-          createChannel(Env.kGroupClientHost, Env.kGroupClientPort),
+  static GroupServiceClient createGroupClient() => GroupServiceClient(
+      createChannel(Env.kGroupClientHost, Env.kGroupClientPort),
+      interceptors: _createInterceptors);
+
+  static ChannelServiceClient createChannelClient() => ChannelServiceClient(
+      createChannel(Env.kGroupClientHost, Env.kGroupClientPort),
+      interceptors: _createInterceptors);
+
+  static NotificationServiceClient createNotificationClient() =>
+      NotificationServiceClient(
+          createChannel(
+              Env.kNotificationClientHost, Env.kNotificationClientPort),
           interceptors: _createInterceptors);
 }

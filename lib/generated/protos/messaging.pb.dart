@@ -1,113 +1,117 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: messaging.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'package:protobuf_google/protobuf_google.dart' as $10;
-
+import 'common.pb.dart' as $0;
 import 'messaging.pbenum.dart';
 
 export 'messaging.pbenum.dart';
 
 class MessageChat extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MessageChat', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipient')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
-    ..e<MessageStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: MessageStatus.MESSAGE_STATUS_UNSPECIFIED, valueOf: MessageStatus.valueOf, enumValues: MessageStatus.values)
-    ..aOM<$10.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sentAt', protoName: 'sentAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receivedAt', protoName: 'receivedAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readAt', protoName: 'readAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedAt', protoName: 'deletedAt', subBuilder: $10.Timestamp.create)
-    ..pPS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readBy', protoName: 'readBy')
-    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attachment')
-    ..e<MessageAttachmentType>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attachmentType', $pb.PbFieldType.OE, protoName: 'attachmentType', defaultOrMaker: MessageAttachmentType.MESSAGE_ATTACHMENT_TYPE_UNSPECIFIED, valueOf: MessageAttachmentType.valueOf, enumValues: MessageAttachmentType.values)
-    ..pPS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactions')
-    ..pPS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mentions')
-    ..hasRequiredFields = false
-  ;
-
-  MessageChat._() : super();
   factory MessageChat({
     $core.String? id,
     $core.String? sender,
     $core.String? recipient,
     $core.String? body,
     MessageStatus? status,
-    $10.Timestamp? createdAt,
-    $10.Timestamp? updatedAt,
-    $10.Timestamp? sentAt,
-    $10.Timestamp? receivedAt,
-    $10.Timestamp? readAt,
-    $10.Timestamp? deletedAt,
+    $0.Timestamp? createdAt,
+    $0.Timestamp? updatedAt,
+    $0.Timestamp? sentAt,
+    $0.Timestamp? receivedAt,
+    $0.Timestamp? readAt,
+    $0.Timestamp? deletedAt,
     $core.Iterable<$core.String>? readBy,
     $core.String? attachment,
     MessageAttachmentType? attachmentType,
     $core.Iterable<$core.String>? reactions,
     $core.Iterable<$core.String>? mentions,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (sender != null) {
-      _result.sender = sender;
+      $result.sender = sender;
     }
     if (recipient != null) {
-      _result.recipient = recipient;
+      $result.recipient = recipient;
     }
     if (body != null) {
-      _result.body = body;
+      $result.body = body;
     }
     if (status != null) {
-      _result.status = status;
+      $result.status = status;
     }
     if (createdAt != null) {
-      _result.createdAt = createdAt;
+      $result.createdAt = createdAt;
     }
     if (updatedAt != null) {
-      _result.updatedAt = updatedAt;
+      $result.updatedAt = updatedAt;
     }
     if (sentAt != null) {
-      _result.sentAt = sentAt;
+      $result.sentAt = sentAt;
     }
     if (receivedAt != null) {
-      _result.receivedAt = receivedAt;
+      $result.receivedAt = receivedAt;
     }
     if (readAt != null) {
-      _result.readAt = readAt;
+      $result.readAt = readAt;
     }
     if (deletedAt != null) {
-      _result.deletedAt = deletedAt;
+      $result.deletedAt = deletedAt;
     }
     if (readBy != null) {
-      _result.readBy.addAll(readBy);
+      $result.readBy.addAll(readBy);
     }
     if (attachment != null) {
-      _result.attachment = attachment;
+      $result.attachment = attachment;
     }
     if (attachmentType != null) {
-      _result.attachmentType = attachmentType;
+      $result.attachmentType = attachmentType;
     }
     if (reactions != null) {
-      _result.reactions.addAll(reactions);
+      $result.reactions.addAll(reactions);
     }
     if (mentions != null) {
-      _result.mentions.addAll(mentions);
+      $result.mentions.addAll(mentions);
     }
-    return _result;
+    return $result;
   }
+  MessageChat._() : super();
   factory MessageChat.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MessageChat.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MessageChat', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sender')
+    ..aOS(3, _omitFieldNames ? '' : 'recipient')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..e<MessageStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: MessageStatus.MESSAGE_STATUS_UNSPECIFIED, valueOf: MessageStatus.valueOf, enumValues: MessageStatus.values)
+    ..aOM<$0.Timestamp>(7, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(9, _omitFieldNames ? '' : 'sentAt', protoName: 'sentAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(10, _omitFieldNames ? '' : 'receivedAt', protoName: 'receivedAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(11, _omitFieldNames ? '' : 'readAt', protoName: 'readAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', protoName: 'deletedAt', subBuilder: $0.Timestamp.create)
+    ..pPS(13, _omitFieldNames ? '' : 'readBy', protoName: 'readBy')
+    ..aOS(14, _omitFieldNames ? '' : 'attachment')
+    ..e<MessageAttachmentType>(15, _omitFieldNames ? '' : 'attachmentType', $pb.PbFieldType.OE, protoName: 'attachmentType', defaultOrMaker: MessageAttachmentType.MESSAGE_ATTACHMENT_TYPE_UNSPECIFIED, valueOf: MessageAttachmentType.valueOf, enumValues: MessageAttachmentType.values)
+    ..pPS(16, _omitFieldNames ? '' : 'reactions')
+    ..pPS(17, _omitFieldNames ? '' : 'mentions')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -117,8 +121,10 @@ class MessageChat extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MessageChat copyWith(void Function(MessageChat) updates) => super.copyWith((message) => updates(message as MessageChat)) as MessageChat; // ignore: deprecated_member_use
+  MessageChat copyWith(void Function(MessageChat) updates) => super.copyWith((message) => updates(message as MessageChat)) as MessageChat;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MessageChat create() => MessageChat._();
   MessageChat createEmptyInstance() => create();
@@ -173,70 +179,70 @@ class MessageChat extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 
   @$pb.TagNumber(7)
-  $10.Timestamp get createdAt => $_getN(5);
+  $0.Timestamp get createdAt => $_getN(5);
   @$pb.TagNumber(7)
-  set createdAt($10.Timestamp v) { setField(7, v); }
+  set createdAt($0.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCreatedAt() => $_has(5);
   @$pb.TagNumber(7)
   void clearCreatedAt() => clearField(7);
   @$pb.TagNumber(7)
-  $10.Timestamp ensureCreatedAt() => $_ensure(5);
+  $0.Timestamp ensureCreatedAt() => $_ensure(5);
 
   @$pb.TagNumber(8)
-  $10.Timestamp get updatedAt => $_getN(6);
+  $0.Timestamp get updatedAt => $_getN(6);
   @$pb.TagNumber(8)
-  set updatedAt($10.Timestamp v) { setField(8, v); }
+  set updatedAt($0.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(6);
   @$pb.TagNumber(8)
   void clearUpdatedAt() => clearField(8);
   @$pb.TagNumber(8)
-  $10.Timestamp ensureUpdatedAt() => $_ensure(6);
+  $0.Timestamp ensureUpdatedAt() => $_ensure(6);
 
   @$pb.TagNumber(9)
-  $10.Timestamp get sentAt => $_getN(7);
+  $0.Timestamp get sentAt => $_getN(7);
   @$pb.TagNumber(9)
-  set sentAt($10.Timestamp v) { setField(9, v); }
+  set sentAt($0.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasSentAt() => $_has(7);
   @$pb.TagNumber(9)
   void clearSentAt() => clearField(9);
   @$pb.TagNumber(9)
-  $10.Timestamp ensureSentAt() => $_ensure(7);
+  $0.Timestamp ensureSentAt() => $_ensure(7);
 
   @$pb.TagNumber(10)
-  $10.Timestamp get receivedAt => $_getN(8);
+  $0.Timestamp get receivedAt => $_getN(8);
   @$pb.TagNumber(10)
-  set receivedAt($10.Timestamp v) { setField(10, v); }
+  set receivedAt($0.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasReceivedAt() => $_has(8);
   @$pb.TagNumber(10)
   void clearReceivedAt() => clearField(10);
   @$pb.TagNumber(10)
-  $10.Timestamp ensureReceivedAt() => $_ensure(8);
+  $0.Timestamp ensureReceivedAt() => $_ensure(8);
 
   @$pb.TagNumber(11)
-  $10.Timestamp get readAt => $_getN(9);
+  $0.Timestamp get readAt => $_getN(9);
   @$pb.TagNumber(11)
-  set readAt($10.Timestamp v) { setField(11, v); }
+  set readAt($0.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasReadAt() => $_has(9);
   @$pb.TagNumber(11)
   void clearReadAt() => clearField(11);
   @$pb.TagNumber(11)
-  $10.Timestamp ensureReadAt() => $_ensure(9);
+  $0.Timestamp ensureReadAt() => $_ensure(9);
 
   @$pb.TagNumber(12)
-  $10.Timestamp get deletedAt => $_getN(10);
+  $0.Timestamp get deletedAt => $_getN(10);
   @$pb.TagNumber(12)
-  set deletedAt($10.Timestamp v) { setField(12, v); }
+  set deletedAt($0.Timestamp v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasDeletedAt() => $_has(10);
   @$pb.TagNumber(12)
   void clearDeletedAt() => clearField(12);
   @$pb.TagNumber(12)
-  $10.Timestamp ensureDeletedAt() => $_ensure(10);
+  $0.Timestamp ensureDeletedAt() => $_ensure(10);
 
   @$pb.TagNumber(13)
   $core.List<$core.String> get readBy => $_getList(11);
@@ -267,98 +273,99 @@ class MessageChat extends $pb.GeneratedMessage {
 }
 
 class MessageThread extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MessageThread', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipient')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
-    ..e<MessageStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: MessageStatus.MESSAGE_STATUS_UNSPECIFIED, valueOf: MessageStatus.valueOf, enumValues: MessageStatus.values)
-    ..aOM<$10.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sentAt', protoName: 'sentAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receivedAt', protoName: 'receivedAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readAt', protoName: 'readAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedAt', protoName: 'deletedAt', subBuilder: $10.Timestamp.create)
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
-    ..pPS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readBy', protoName: 'readBy')
-    ..pPS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactions')
-    ..pPS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mentions')
-    ..pc<MessageChat>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: MessageChat.create)
-    ..hasRequiredFields = false
-  ;
-
-  MessageThread._() : super();
   factory MessageThread({
     $core.String? id,
     $core.String? sender,
     $core.String? recipient,
     $core.String? body,
     MessageStatus? status,
-    $10.Timestamp? createdAt,
-    $10.Timestamp? updatedAt,
-    $10.Timestamp? sentAt,
-    $10.Timestamp? receivedAt,
-    $10.Timestamp? readAt,
-    $10.Timestamp? deletedAt,
+    $0.Timestamp? createdAt,
+    $0.Timestamp? updatedAt,
+    $0.Timestamp? sentAt,
+    $0.Timestamp? receivedAt,
+    $0.Timestamp? readAt,
+    $0.Timestamp? deletedAt,
     $core.String? subject,
     $core.Iterable<$core.String>? readBy,
     $core.Iterable<$core.String>? reactions,
     $core.Iterable<$core.String>? mentions,
     $core.Iterable<MessageChat>? messages,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (sender != null) {
-      _result.sender = sender;
+      $result.sender = sender;
     }
     if (recipient != null) {
-      _result.recipient = recipient;
+      $result.recipient = recipient;
     }
     if (body != null) {
-      _result.body = body;
+      $result.body = body;
     }
     if (status != null) {
-      _result.status = status;
+      $result.status = status;
     }
     if (createdAt != null) {
-      _result.createdAt = createdAt;
+      $result.createdAt = createdAt;
     }
     if (updatedAt != null) {
-      _result.updatedAt = updatedAt;
+      $result.updatedAt = updatedAt;
     }
     if (sentAt != null) {
-      _result.sentAt = sentAt;
+      $result.sentAt = sentAt;
     }
     if (receivedAt != null) {
-      _result.receivedAt = receivedAt;
+      $result.receivedAt = receivedAt;
     }
     if (readAt != null) {
-      _result.readAt = readAt;
+      $result.readAt = readAt;
     }
     if (deletedAt != null) {
-      _result.deletedAt = deletedAt;
+      $result.deletedAt = deletedAt;
     }
     if (subject != null) {
-      _result.subject = subject;
+      $result.subject = subject;
     }
     if (readBy != null) {
-      _result.readBy.addAll(readBy);
+      $result.readBy.addAll(readBy);
     }
     if (reactions != null) {
-      _result.reactions.addAll(reactions);
+      $result.reactions.addAll(reactions);
     }
     if (mentions != null) {
-      _result.mentions.addAll(mentions);
+      $result.mentions.addAll(mentions);
     }
     if (messages != null) {
-      _result.messages.addAll(messages);
+      $result.messages.addAll(messages);
     }
-    return _result;
+    return $result;
   }
+  MessageThread._() : super();
   factory MessageThread.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MessageThread.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MessageThread', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sender')
+    ..aOS(3, _omitFieldNames ? '' : 'recipient')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..e<MessageStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: MessageStatus.MESSAGE_STATUS_UNSPECIFIED, valueOf: MessageStatus.valueOf, enumValues: MessageStatus.values)
+    ..aOM<$0.Timestamp>(7, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(9, _omitFieldNames ? '' : 'sentAt', protoName: 'sentAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(10, _omitFieldNames ? '' : 'receivedAt', protoName: 'receivedAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(11, _omitFieldNames ? '' : 'readAt', protoName: 'readAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', protoName: 'deletedAt', subBuilder: $0.Timestamp.create)
+    ..aOS(13, _omitFieldNames ? '' : 'subject')
+    ..pPS(14, _omitFieldNames ? '' : 'readBy', protoName: 'readBy')
+    ..pPS(15, _omitFieldNames ? '' : 'reactions')
+    ..pPS(16, _omitFieldNames ? '' : 'mentions')
+    ..pc<MessageChat>(17, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: MessageChat.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -368,8 +375,10 @@ class MessageThread extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MessageThread copyWith(void Function(MessageThread) updates) => super.copyWith((message) => updates(message as MessageThread)) as MessageThread; // ignore: deprecated_member_use
+  MessageThread copyWith(void Function(MessageThread) updates) => super.copyWith((message) => updates(message as MessageThread)) as MessageThread;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MessageThread create() => MessageThread._();
   MessageThread createEmptyInstance() => create();
@@ -424,70 +433,70 @@ class MessageThread extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 
   @$pb.TagNumber(7)
-  $10.Timestamp get createdAt => $_getN(5);
+  $0.Timestamp get createdAt => $_getN(5);
   @$pb.TagNumber(7)
-  set createdAt($10.Timestamp v) { setField(7, v); }
+  set createdAt($0.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCreatedAt() => $_has(5);
   @$pb.TagNumber(7)
   void clearCreatedAt() => clearField(7);
   @$pb.TagNumber(7)
-  $10.Timestamp ensureCreatedAt() => $_ensure(5);
+  $0.Timestamp ensureCreatedAt() => $_ensure(5);
 
   @$pb.TagNumber(8)
-  $10.Timestamp get updatedAt => $_getN(6);
+  $0.Timestamp get updatedAt => $_getN(6);
   @$pb.TagNumber(8)
-  set updatedAt($10.Timestamp v) { setField(8, v); }
+  set updatedAt($0.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(6);
   @$pb.TagNumber(8)
   void clearUpdatedAt() => clearField(8);
   @$pb.TagNumber(8)
-  $10.Timestamp ensureUpdatedAt() => $_ensure(6);
+  $0.Timestamp ensureUpdatedAt() => $_ensure(6);
 
   @$pb.TagNumber(9)
-  $10.Timestamp get sentAt => $_getN(7);
+  $0.Timestamp get sentAt => $_getN(7);
   @$pb.TagNumber(9)
-  set sentAt($10.Timestamp v) { setField(9, v); }
+  set sentAt($0.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasSentAt() => $_has(7);
   @$pb.TagNumber(9)
   void clearSentAt() => clearField(9);
   @$pb.TagNumber(9)
-  $10.Timestamp ensureSentAt() => $_ensure(7);
+  $0.Timestamp ensureSentAt() => $_ensure(7);
 
   @$pb.TagNumber(10)
-  $10.Timestamp get receivedAt => $_getN(8);
+  $0.Timestamp get receivedAt => $_getN(8);
   @$pb.TagNumber(10)
-  set receivedAt($10.Timestamp v) { setField(10, v); }
+  set receivedAt($0.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasReceivedAt() => $_has(8);
   @$pb.TagNumber(10)
   void clearReceivedAt() => clearField(10);
   @$pb.TagNumber(10)
-  $10.Timestamp ensureReceivedAt() => $_ensure(8);
+  $0.Timestamp ensureReceivedAt() => $_ensure(8);
 
   @$pb.TagNumber(11)
-  $10.Timestamp get readAt => $_getN(9);
+  $0.Timestamp get readAt => $_getN(9);
   @$pb.TagNumber(11)
-  set readAt($10.Timestamp v) { setField(11, v); }
+  set readAt($0.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasReadAt() => $_has(9);
   @$pb.TagNumber(11)
   void clearReadAt() => clearField(11);
   @$pb.TagNumber(11)
-  $10.Timestamp ensureReadAt() => $_ensure(9);
+  $0.Timestamp ensureReadAt() => $_ensure(9);
 
   @$pb.TagNumber(12)
-  $10.Timestamp get deletedAt => $_getN(10);
+  $0.Timestamp get deletedAt => $_getN(10);
   @$pb.TagNumber(12)
-  set deletedAt($10.Timestamp v) { setField(12, v); }
+  set deletedAt($0.Timestamp v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasDeletedAt() => $_has(10);
   @$pb.TagNumber(12)
   void clearDeletedAt() => clearField(12);
   @$pb.TagNumber(12)
-  $10.Timestamp ensureDeletedAt() => $_ensure(10);
+  $0.Timestamp ensureDeletedAt() => $_ensure(10);
 
   @$pb.TagNumber(13)
   $core.String get subject => $_getSZ(11);
@@ -518,34 +527,35 @@ enum MessageListItem_Item {
 }
 
 class MessageListItem extends $pb.GeneratedMessage {
+  factory MessageListItem({
+    MessageChat? message,
+    MessageThread? thread,
+  }) {
+    final $result = create();
+    if (message != null) {
+      $result.message = message;
+    }
+    if (thread != null) {
+      $result.thread = thread;
+    }
+    return $result;
+  }
+  MessageListItem._() : super();
+  factory MessageListItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MessageListItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, MessageListItem_Item> _MessageListItem_ItemByTag = {
     1 : MessageListItem_Item.message,
     2 : MessageListItem_Item.thread,
     0 : MessageListItem_Item.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MessageListItem', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MessageListItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOM<MessageChat>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: MessageChat.create)
-    ..aOM<MessageThread>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'thread', subBuilder: MessageThread.create)
+    ..aOM<MessageChat>(1, _omitFieldNames ? '' : 'message', subBuilder: MessageChat.create)
+    ..aOM<MessageThread>(2, _omitFieldNames ? '' : 'thread', subBuilder: MessageThread.create)
     ..hasRequiredFields = false
   ;
 
-  MessageListItem._() : super();
-  factory MessageListItem({
-    MessageChat? message,
-    MessageThread? thread,
-  }) {
-    final _result = create();
-    if (message != null) {
-      _result.message = message;
-    }
-    if (thread != null) {
-      _result.thread = thread;
-    }
-    return _result;
-  }
-  factory MessageListItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MessageListItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -555,8 +565,10 @@ class MessageListItem extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MessageListItem copyWith(void Function(MessageListItem) updates) => super.copyWith((message) => updates(message as MessageListItem)) as MessageListItem; // ignore: deprecated_member_use
+  MessageListItem copyWith(void Function(MessageListItem) updates) => super.copyWith((message) => updates(message as MessageListItem)) as MessageListItem;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MessageListItem create() => MessageListItem._();
   MessageListItem createEmptyInstance() => create();
@@ -592,23 +604,24 @@ class MessageListItem extends $pb.GeneratedMessage {
 }
 
 class MessageList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MessageList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<MessageListItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: MessageListItem.create)
-    ..hasRequiredFields = false
-  ;
-
-  MessageList._() : super();
   factory MessageList({
     $core.Iterable<MessageListItem>? messages,
   }) {
-    final _result = create();
+    final $result = create();
     if (messages != null) {
-      _result.messages.addAll(messages);
+      $result.messages.addAll(messages);
     }
-    return _result;
+    return $result;
   }
+  MessageList._() : super();
   factory MessageList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MessageList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MessageList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<MessageListItem>(1, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: MessageListItem.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -618,8 +631,10 @@ class MessageList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MessageList copyWith(void Function(MessageList) updates) => super.copyWith((message) => updates(message as MessageList)) as MessageList; // ignore: deprecated_member_use
+  MessageList copyWith(void Function(MessageList) updates) => super.copyWith((message) => updates(message as MessageList)) as MessageList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MessageList create() => MessageList._();
   MessageList createEmptyInstance() => create();
@@ -639,39 +654,40 @@ enum GetMessagesRequest_Recipient {
 }
 
 class GetMessagesRequest extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, GetMessagesRequest_Recipient> _GetMessagesRequest_RecipientByTag = {
-    3 : GetMessagesRequest_Recipient.dm,
-    4 : GetMessagesRequest_Recipient.channel,
-    0 : GetMessagesRequest_Recipient.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetMessagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..oo(0, [3, 4])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dm')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel')
-    ..hasRequiredFields = false
-  ;
-
-  GetMessagesRequest._() : super();
   factory GetMessagesRequest({
     $core.String? sender,
     $core.String? dm,
     $core.String? channel,
   }) {
-    final _result = create();
+    final $result = create();
     if (sender != null) {
-      _result.sender = sender;
+      $result.sender = sender;
     }
     if (dm != null) {
-      _result.dm = dm;
+      $result.dm = dm;
     }
     if (channel != null) {
-      _result.channel = channel;
+      $result.channel = channel;
     }
-    return _result;
+    return $result;
   }
+  GetMessagesRequest._() : super();
   factory GetMessagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMessagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, GetMessagesRequest_Recipient> _GetMessagesRequest_RecipientByTag = {
+    3 : GetMessagesRequest_Recipient.dm,
+    4 : GetMessagesRequest_Recipient.channel,
+    0 : GetMessagesRequest_Recipient.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMessagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..oo(0, [3, 4])
+    ..aOS(1, _omitFieldNames ? '' : 'sender')
+    ..aOS(3, _omitFieldNames ? '' : 'dm')
+    ..aOS(4, _omitFieldNames ? '' : 'channel')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -681,8 +697,10 @@ class GetMessagesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetMessagesRequest copyWith(void Function(GetMessagesRequest) updates) => super.copyWith((message) => updates(message as GetMessagesRequest)) as GetMessagesRequest; // ignore: deprecated_member_use
+  GetMessagesRequest copyWith(void Function(GetMessagesRequest) updates) => super.copyWith((message) => updates(message as GetMessagesRequest)) as GetMessagesRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetMessagesRequest create() => GetMessagesRequest._();
   GetMessagesRequest createEmptyInstance() => create();
@@ -723,73 +741,74 @@ class GetMessagesRequest extends $pb.GeneratedMessage {
 }
 
 class DirectMessenger extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DirectMessenger', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatar')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'online')
-    ..aOM<$10.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastSeen', protoName: 'lastSeen', subBuilder: $10.Timestamp.create)
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'muted')
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
-    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'archived')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bio')
-    ..hasRequiredFields = false
-  ;
-
-  DirectMessenger._() : super();
   factory DirectMessenger({
     $core.String? id,
     $core.String? name,
     $core.String? avatar,
     $core.bool? online,
-    $10.Timestamp? createdAt,
-    $10.Timestamp? updatedAt,
-    $10.Timestamp? lastSeen,
+    $0.Timestamp? createdAt,
+    $0.Timestamp? updatedAt,
+    $0.Timestamp? lastSeen,
     $core.bool? muted,
     $core.bool? blocked,
     $core.bool? archived,
     $core.String? bio,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (avatar != null) {
-      _result.avatar = avatar;
+      $result.avatar = avatar;
     }
     if (online != null) {
-      _result.online = online;
+      $result.online = online;
     }
     if (createdAt != null) {
-      _result.createdAt = createdAt;
+      $result.createdAt = createdAt;
     }
     if (updatedAt != null) {
-      _result.updatedAt = updatedAt;
+      $result.updatedAt = updatedAt;
     }
     if (lastSeen != null) {
-      _result.lastSeen = lastSeen;
+      $result.lastSeen = lastSeen;
     }
     if (muted != null) {
-      _result.muted = muted;
+      $result.muted = muted;
     }
     if (blocked != null) {
-      _result.blocked = blocked;
+      $result.blocked = blocked;
     }
     if (archived != null) {
-      _result.archived = archived;
+      $result.archived = archived;
     }
     if (bio != null) {
-      _result.bio = bio;
+      $result.bio = bio;
     }
-    return _result;
+    return $result;
   }
+  DirectMessenger._() : super();
   factory DirectMessenger.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DirectMessenger.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DirectMessenger', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'avatar')
+    ..aOB(4, _omitFieldNames ? '' : 'online')
+    ..aOM<$0.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen', subBuilder: $0.Timestamp.create)
+    ..aOB(8, _omitFieldNames ? '' : 'muted')
+    ..aOB(9, _omitFieldNames ? '' : 'blocked')
+    ..aOB(10, _omitFieldNames ? '' : 'archived')
+    ..aOS(11, _omitFieldNames ? '' : 'bio')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -799,8 +818,10 @@ class DirectMessenger extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DirectMessenger copyWith(void Function(DirectMessenger) updates) => super.copyWith((message) => updates(message as DirectMessenger)) as DirectMessenger; // ignore: deprecated_member_use
+  DirectMessenger copyWith(void Function(DirectMessenger) updates) => super.copyWith((message) => updates(message as DirectMessenger)) as DirectMessenger;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DirectMessenger create() => DirectMessenger._();
   DirectMessenger createEmptyInstance() => create();
@@ -846,37 +867,37 @@ class DirectMessenger extends $pb.GeneratedMessage {
   void clearOnline() => clearField(4);
 
   @$pb.TagNumber(5)
-  $10.Timestamp get createdAt => $_getN(4);
+  $0.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set createdAt($10.Timestamp v) { setField(5, v); }
+  set createdAt($0.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => clearField(5);
   @$pb.TagNumber(5)
-  $10.Timestamp ensureCreatedAt() => $_ensure(4);
+  $0.Timestamp ensureCreatedAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $10.Timestamp get updatedAt => $_getN(5);
+  $0.Timestamp get updatedAt => $_getN(5);
   @$pb.TagNumber(6)
-  set updatedAt($10.Timestamp v) { setField(6, v); }
+  set updatedAt($0.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasUpdatedAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearUpdatedAt() => clearField(6);
   @$pb.TagNumber(6)
-  $10.Timestamp ensureUpdatedAt() => $_ensure(5);
+  $0.Timestamp ensureUpdatedAt() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $10.Timestamp get lastSeen => $_getN(6);
+  $0.Timestamp get lastSeen => $_getN(6);
   @$pb.TagNumber(7)
-  set lastSeen($10.Timestamp v) { setField(7, v); }
+  set lastSeen($0.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasLastSeen() => $_has(6);
   @$pb.TagNumber(7)
   void clearLastSeen() => clearField(7);
   @$pb.TagNumber(7)
-  $10.Timestamp ensureLastSeen() => $_ensure(6);
+  $0.Timestamp ensureLastSeen() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $core.bool get muted => $_getBF(7);
@@ -916,23 +937,24 @@ class DirectMessenger extends $pb.GeneratedMessage {
 }
 
 class DirectMessengerList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DirectMessengerList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<DirectMessenger>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messengers', $pb.PbFieldType.PM, subBuilder: DirectMessenger.create)
-    ..hasRequiredFields = false
-  ;
-
-  DirectMessengerList._() : super();
   factory DirectMessengerList({
     $core.Iterable<DirectMessenger>? messengers,
   }) {
-    final _result = create();
+    final $result = create();
     if (messengers != null) {
-      _result.messengers.addAll(messengers);
+      $result.messengers.addAll(messengers);
     }
-    return _result;
+    return $result;
   }
+  DirectMessengerList._() : super();
   factory DirectMessengerList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DirectMessengerList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DirectMessengerList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<DirectMessenger>(1, _omitFieldNames ? '' : 'messengers', $pb.PbFieldType.PM, subBuilder: DirectMessenger.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -942,8 +964,10 @@ class DirectMessengerList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DirectMessengerList copyWith(void Function(DirectMessengerList) updates) => super.copyWith((message) => updates(message as DirectMessengerList)) as DirectMessengerList; // ignore: deprecated_member_use
+  DirectMessengerList copyWith(void Function(DirectMessengerList) updates) => super.copyWith((message) => updates(message as DirectMessengerList)) as DirectMessengerList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DirectMessengerList create() => DirectMessengerList._();
   DirectMessengerList createEmptyInstance() => create();
@@ -956,3 +980,6 @@ class DirectMessengerList extends $pb.GeneratedMessage {
   $core.List<DirectMessenger> get messengers => $_getList(0);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

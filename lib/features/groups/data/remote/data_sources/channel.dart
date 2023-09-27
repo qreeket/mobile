@@ -2,14 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobile/core/network/error.handler.dart';
 import 'package:mobile/features/common/domain/repositories/security.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
 import 'package:mobile/generated/protos/group_service.pbgrpc.dart';
-import 'package:protobuf_google/protobuf_google.dart';
 
 /// Remote data source for [Channel]s
 @injectable
 class ChannelRemoteDataSource {
-  final GroupChannelServiceClient _channelClient;
+  final ChannelServiceClient _channelClient;
   final BaseSecurityRepository _securityRepository;
 
   const ChannelRemoteDataSource(this._channelClient, this._securityRepository);

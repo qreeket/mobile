@@ -1,35 +1,39 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: announcement.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'package:protobuf_google/protobuf_google.dart' as $2;
-import 'package:protobuf_google/protobuf_google.dart' as $10;
+import 'common.pb.dart' as $0;
 
 class CreateAnnouncementRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateAnnouncementRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOM<Announcement>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'announcement', subBuilder: Announcement.create)
-    ..hasRequiredFields = false
-  ;
-
-  CreateAnnouncementRequest._() : super();
   factory CreateAnnouncementRequest({
     Announcement? announcement,
   }) {
-    final _result = create();
+    final $result = create();
     if (announcement != null) {
-      _result.announcement = announcement;
+      $result.announcement = announcement;
     }
-    return _result;
+    return $result;
   }
+  CreateAnnouncementRequest._() : super();
   factory CreateAnnouncementRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateAnnouncementRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAnnouncementRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOM<Announcement>(1, _omitFieldNames ? '' : 'announcement', subBuilder: Announcement.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -39,8 +43,10 @@ class CreateAnnouncementRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateAnnouncementRequest copyWith(void Function(CreateAnnouncementRequest) updates) => super.copyWith((message) => updates(message as CreateAnnouncementRequest)) as CreateAnnouncementRequest; // ignore: deprecated_member_use
+  CreateAnnouncementRequest copyWith(void Function(CreateAnnouncementRequest) updates) => super.copyWith((message) => updates(message as CreateAnnouncementRequest)) as CreateAnnouncementRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateAnnouncementRequest create() => CreateAnnouncementRequest._();
   CreateAnnouncementRequest createEmptyInstance() => create();
@@ -62,28 +68,29 @@ class CreateAnnouncementRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateAnnouncementRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateAnnouncementRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOM<Announcement>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'announcement', subBuilder: Announcement.create)
-    ..hasRequiredFields = false
-  ;
-
-  UpdateAnnouncementRequest._() : super();
   factory UpdateAnnouncementRequest({
     $core.String? id,
     Announcement? announcement,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (announcement != null) {
-      _result.announcement = announcement;
+      $result.announcement = announcement;
     }
-    return _result;
+    return $result;
   }
+  UpdateAnnouncementRequest._() : super();
   factory UpdateAnnouncementRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateAnnouncementRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateAnnouncementRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<Announcement>(2, _omitFieldNames ? '' : 'announcement', subBuilder: Announcement.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -93,8 +100,10 @@ class UpdateAnnouncementRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateAnnouncementRequest copyWith(void Function(UpdateAnnouncementRequest) updates) => super.copyWith((message) => updates(message as UpdateAnnouncementRequest)) as UpdateAnnouncementRequest; // ignore: deprecated_member_use
+  UpdateAnnouncementRequest copyWith(void Function(UpdateAnnouncementRequest) updates) => super.copyWith((message) => updates(message as UpdateAnnouncementRequest)) as UpdateAnnouncementRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateAnnouncementRequest create() => UpdateAnnouncementRequest._();
   UpdateAnnouncementRequest createEmptyInstance() => create();
@@ -125,23 +134,24 @@ class UpdateAnnouncementRequest extends $pb.GeneratedMessage {
 }
 
 class AnnouncementsList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AnnouncementsList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..pc<Announcement>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'announcements', $pb.PbFieldType.PM, subBuilder: Announcement.create)
-    ..hasRequiredFields = false
-  ;
-
-  AnnouncementsList._() : super();
   factory AnnouncementsList({
     $core.Iterable<Announcement>? announcements,
   }) {
-    final _result = create();
+    final $result = create();
     if (announcements != null) {
-      _result.announcements.addAll(announcements);
+      $result.announcements.addAll(announcements);
     }
-    return _result;
+    return $result;
   }
+  AnnouncementsList._() : super();
   factory AnnouncementsList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnnouncementsList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnnouncementsList', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..pc<Announcement>(1, _omitFieldNames ? '' : 'announcements', $pb.PbFieldType.PM, subBuilder: Announcement.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -151,8 +161,10 @@ class AnnouncementsList extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AnnouncementsList copyWith(void Function(AnnouncementsList) updates) => super.copyWith((message) => updates(message as AnnouncementsList)) as AnnouncementsList; // ignore: deprecated_member_use
+  AnnouncementsList copyWith(void Function(AnnouncementsList) updates) => super.copyWith((message) => updates(message as AnnouncementsList)) as AnnouncementsList;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AnnouncementsList create() => AnnouncementsList._();
   AnnouncementsList createEmptyInstance() => create();
@@ -166,58 +178,59 @@ class AnnouncementsList extends $pb.GeneratedMessage {
 }
 
 class Announcement extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Announcement', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'qreeket'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'author')
-    ..aOM<$2.StringValue>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrl', subBuilder: $2.StringValue.create)
-    ..aOM<$2.StringValue>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linkUrl', subBuilder: $2.StringValue.create)
-    ..aOM<$10.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $10.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
-
-  Announcement._() : super();
   factory Announcement({
     $core.String? id,
     $core.String? title,
     $core.String? body,
     $core.String? author,
-    $2.StringValue? imageUrl,
-    $2.StringValue? linkUrl,
-    $10.Timestamp? createdAt,
-    $10.Timestamp? updatedAt,
+    $0.StringValue? imageUrl,
+    $0.StringValue? linkUrl,
+    $0.Timestamp? createdAt,
+    $0.Timestamp? updatedAt,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (title != null) {
-      _result.title = title;
+      $result.title = title;
     }
     if (body != null) {
-      _result.body = body;
+      $result.body = body;
     }
     if (author != null) {
-      _result.author = author;
+      $result.author = author;
     }
     if (imageUrl != null) {
-      _result.imageUrl = imageUrl;
+      $result.imageUrl = imageUrl;
     }
     if (linkUrl != null) {
-      _result.linkUrl = linkUrl;
+      $result.linkUrl = linkUrl;
     }
     if (createdAt != null) {
-      _result.createdAt = createdAt;
+      $result.createdAt = createdAt;
     }
     if (updatedAt != null) {
-      _result.updatedAt = updatedAt;
+      $result.updatedAt = updatedAt;
     }
-    return _result;
+    return $result;
   }
+  Announcement._() : super();
   factory Announcement.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Announcement.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Announcement', package: const $pb.PackageName(_omitMessageNames ? '' : 'qreeket'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aOS(4, _omitFieldNames ? '' : 'author')
+    ..aOM<$0.StringValue>(5, _omitFieldNames ? '' : 'imageUrl', subBuilder: $0.StringValue.create)
+    ..aOM<$0.StringValue>(6, _omitFieldNames ? '' : 'linkUrl', subBuilder: $0.StringValue.create)
+    ..aOM<$0.Timestamp>(7, _omitFieldNames ? '' : 'createdAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt', subBuilder: $0.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -227,8 +240,10 @@ class Announcement extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Announcement copyWith(void Function(Announcement) updates) => super.copyWith((message) => updates(message as Announcement)) as Announcement; // ignore: deprecated_member_use
+  Announcement copyWith(void Function(Announcement) updates) => super.copyWith((message) => updates(message as Announcement)) as Announcement;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Announcement create() => Announcement._();
   Announcement createEmptyInstance() => create();
@@ -274,47 +289,50 @@ class Announcement extends $pb.GeneratedMessage {
   void clearAuthor() => clearField(4);
 
   @$pb.TagNumber(5)
-  $2.StringValue get imageUrl => $_getN(4);
+  $0.StringValue get imageUrl => $_getN(4);
   @$pb.TagNumber(5)
-  set imageUrl($2.StringValue v) { setField(5, v); }
+  set imageUrl($0.StringValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasImageUrl() => $_has(4);
   @$pb.TagNumber(5)
   void clearImageUrl() => clearField(5);
   @$pb.TagNumber(5)
-  $2.StringValue ensureImageUrl() => $_ensure(4);
+  $0.StringValue ensureImageUrl() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $2.StringValue get linkUrl => $_getN(5);
+  $0.StringValue get linkUrl => $_getN(5);
   @$pb.TagNumber(6)
-  set linkUrl($2.StringValue v) { setField(6, v); }
+  set linkUrl($0.StringValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLinkUrl() => $_has(5);
   @$pb.TagNumber(6)
   void clearLinkUrl() => clearField(6);
   @$pb.TagNumber(6)
-  $2.StringValue ensureLinkUrl() => $_ensure(5);
+  $0.StringValue ensureLinkUrl() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $10.Timestamp get createdAt => $_getN(6);
+  $0.Timestamp get createdAt => $_getN(6);
   @$pb.TagNumber(7)
-  set createdAt($10.Timestamp v) { setField(7, v); }
+  set createdAt($0.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCreatedAt() => $_has(6);
   @$pb.TagNumber(7)
   void clearCreatedAt() => clearField(7);
   @$pb.TagNumber(7)
-  $10.Timestamp ensureCreatedAt() => $_ensure(6);
+  $0.Timestamp ensureCreatedAt() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $10.Timestamp get updatedAt => $_getN(7);
+  $0.Timestamp get updatedAt => $_getN(7);
   @$pb.TagNumber(8)
-  set updatedAt($10.Timestamp v) { setField(8, v); }
+  set updatedAt($0.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearUpdatedAt() => clearField(8);
   @$pb.TagNumber(8)
-  $10.Timestamp ensureUpdatedAt() => $_ensure(7);
+  $0.Timestamp ensureUpdatedAt() => $_ensure(7);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

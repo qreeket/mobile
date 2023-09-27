@@ -38,6 +38,10 @@ abstract class Env {
   static final String kGroupClientHost = _Env.kGroupClientHost;
   @EnviedField(varName: 'GROUPS_GRPC_SERVER_PORT')
   static final int kGroupClientPort = _Env.kGroupClientPort;
+  @EnviedField(varName: 'NOTIFICATION_GRPC_SERVER_HOST')
+  static final String kNotificationClientHost = _Env.kNotificationClientHost;
+  @EnviedField(varName: 'NOTIFICATION_GRPC_SERVER_PORT')
+  static final int kNotificationClientPort = _Env.kNotificationClientPort;
 
   // endregion grpc servers
 

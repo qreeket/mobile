@@ -11,7 +11,7 @@ import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/auth_service.pbgrpc.dart';
 import 'package:mobile/generated/protos/sms.pb.dart';
 import 'package:mobile/generated/protos/sms_service.pbgrpc.dart';
-import 'package:protobuf_google/protobuf_google.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 // error message

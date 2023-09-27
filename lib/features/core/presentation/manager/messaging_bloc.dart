@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:mobile/generated/protos/common.pb.dart' as common;
 import 'package:mobile/generated/protos/messaging.pb.dart';
 import 'package:protobuf_google/protobuf_google.dart';
 import 'package:shared_utils/shared_utils.dart';
@@ -36,7 +37,10 @@ class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
       name: 'Qreeket Dev Team',
       bio: 'We are here to help you',
       online: false,
-      lastSeen: Timestamp.fromDateTime(DateTime.now()),
+      lastSeen: common.Timestamp(
+        seconds: Timestamp.fromDateTime(DateTime.now()).seconds,
+        nanos: Timestamp.fromDateTime(DateTime.now()).nanos,
+      ),
     ),
     DirectMessenger(
       avatar:
@@ -45,7 +49,10 @@ class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
       name: '@maxwell',
       online: true,
       bio: 'I am a developer and I love to code',
-      lastSeen: Timestamp.fromDateTime(DateTime.now()),
+      lastSeen: common.Timestamp(
+        seconds: Timestamp.fromDateTime(DateTime.now()).seconds,
+        nanos: Timestamp.fromDateTime(DateTime.now()).nanos,
+      ),
     ),
     DirectMessenger(
       avatar:
@@ -54,7 +61,10 @@ class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
       name: '@bella-shapaz',
       blocked: true,
       bio: 'Customer Service Executive',
-      lastSeen: Timestamp.fromDateTime(DateTime.now()),
+      lastSeen: common.Timestamp(
+        seconds: Timestamp.fromDateTime(DateTime.now()).seconds,
+        nanos: Timestamp.fromDateTime(DateTime.now()).nanos,
+      ),
     ),
     DirectMessenger(
       avatar:
@@ -64,7 +74,10 @@ class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
       bio: 'I ❤️ Flutter',
       online: true,
       archived: true,
-      lastSeen: Timestamp.fromDateTime(DateTime.now()),
+      lastSeen: common.Timestamp(
+        seconds: Timestamp.fromDateTime(DateTime.now()).seconds,
+        nanos: Timestamp.fromDateTime(DateTime.now()).nanos,
+      ),
     ),
     DirectMessenger(
       avatar:
@@ -74,7 +87,10 @@ class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
       bio: 'Busy 😴',
       online: false,
       muted: true,
-      lastSeen: Timestamp.fromDateTime(DateTime.now()),
+      lastSeen: common.Timestamp(
+        seconds: Timestamp.fromDateTime(DateTime.now()).seconds,
+        nanos: Timestamp.fromDateTime(DateTime.now()).nanos,
+      ),
     ),
     DirectMessenger(
       avatar:
@@ -82,7 +98,10 @@ class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
       id: const Uuid().v4(),
       name: '@makafui',
       bio: 'Destined to break barriers 😇',
-      lastSeen: Timestamp.fromDateTime(DateTime.now()),
+      lastSeen: common.Timestamp(
+        seconds: Timestamp.fromDateTime(DateTime.now()).seconds,
+        nanos: Timestamp.fromDateTime(DateTime.now()).nanos,
+      ),
     ),
   ];
 
