@@ -31,7 +31,7 @@ void main() async => await Sentry.init(
         // set orientation to portrait only
         SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-        // await sl<BaseNotificationRepository>().registerDevice();
+        await sl<BaseNotificationRepository>().registerDevice();
 
         runApp(const QreeketApp());
       },

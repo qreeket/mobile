@@ -7,8 +7,8 @@ import 'package:injectable/injectable.dart';
 import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/network/network.info.dart';
 import 'package:mobile/core/routing/router.dart';
+import 'package:mobile/features/common/domain/repositories/security.dart';
 import 'package:mobile/features/common/presentation/globals.dart';
-import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
 import 'package:shared_utils/shared_utils.dart';
 
 ///  [AppCubit] is responsible for:
@@ -18,8 +18,9 @@ import 'package:shared_utils/shared_utils.dart';
 @injectable
 class AppCubit extends Cubit<BlocState> {
   @factoryMethod
-  AppCubit(this._authBloc) : super(BlocState.initialState());
-  final AuthCubit _authBloc;
+  AppCubit(this._securityRepo, this._networkInfo) : super(BlocState.initialState());
+  final BaseSecurityRepository _securityRepo;
+  final NetworkInfo _networkInfo;
 
   Future<void> observeNetwork() async => sl<NetworkInfo>()
       .observeNetwork()
@@ -28,7 +29,6 @@ class AppCubit extends Cubit<BlocState> {
   /// Toggle network state
   Future<void> _toggleNetworkState(bool connected) async {
     emit(BlocState.loadingState());
-    logger.i('Network state changed to $connected');
     emit(BlocState<bool>.successState(data: connected));
   }
 
@@ -37,7 +37,7 @@ class AppCubit extends Cubit<BlocState> {
     emit(BlocState.loadingState());
 
     // check if device is connected to the internet
-    var connected = await sl<NetworkInfo>().isConnected;
+    var connected = await _networkInfo.isConnected;
     if (!connected) {
       navigatorKey.currentState?.pushNamedAndRemoveUntil(
           AppRouter.noInternetRoute, (route) => false);
@@ -53,7 +53,7 @@ class AppCubit extends Cubit<BlocState> {
 
     // redirect to unsupported device page if device is jailbroken or
     // redirect to home page if user is logged in
-    final isLoggedIn = await _authBloc.isLoggedIn;
+    final isLoggedIn = await _securityRepo.isLoggedIn;
     var route = jailbroken
         ? AppRouter.unsupportedDeviceRoute
         : isLoggedIn

@@ -36,5 +36,5 @@ Future<void> configureDependencies() async {
   await Hive.openBox(Env.kUserGroupsBoxName);
   await Hive.openBox(Env.kUserChannelsBoxName);
   await Hive.openBox(Env.kUserMessagesBoxName);
-  sl.init();
+  await sl.init();
 }

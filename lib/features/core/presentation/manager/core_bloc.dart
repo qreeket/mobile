@@ -19,7 +19,7 @@ class CoreBlocState {
 
 @injectable
 class CoreBloc extends Bloc<CoreEvent, BlocState> {
-  var blocState = CoreBlocState();
+  var blocState = const CoreBlocState();
 
   @factoryMethod
   CoreBloc() : super(BlocState.initialState()) {

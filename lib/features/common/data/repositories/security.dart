@@ -61,7 +61,7 @@ final class SecureStorageRepository implements BaseSecurityRepository {
     if (enabled) {
       // initialize the plugin for android & ios
       var initializationSettingsAndroid =
-          const AndroidInitializationSettings('app_icon');
+          const AndroidInitializationSettings('@drawable/app_icon');
       var initializationSettingsIOS = const DarwinInitializationSettings();
       var initializationSettings = InitializationSettings(
           android: initializationSettingsAndroid,
@@ -83,10 +83,13 @@ final class SecureStorageRepository implements BaseSecurityRepository {
               ?.requestPermission();
       logger.d('Notifications granted: $granted');
       if (!granted!) return right('Notifications permission denied');
+
+      // @todo -> replace with notification utility class
+
       // schedule a notification
       var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-          'main_channel', 'Groups & Channels',
-          channelDescription: 'Group & channel notifications',
+          'main_channel', 'Main channel',
+          channelDescription: 'Main channel notifications',
           importance: Importance.max,
           priority: Priority.high);
       var iOSPlatformChannelSpecifics = const DarwinNotificationDetails();

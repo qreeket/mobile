@@ -21,13 +21,12 @@ class QreeketApp extends StatefulWidget {
 }
 
 class _QreeketAppState extends State<QreeketApp> {
-  final _authCubit = sl<AuthCubit>();
-  late final _appBloc = sl<AppCubit>();
+  late final _authCubit = sl<AuthCubit>(), _appBloc = sl<AppCubit>();
 
   @override
   void initState() {
     super.initState();
-    _appBloc.setupInitialRoute();
+    doAfterDelay(_appBloc.setupInitialRoute);
   }
 
   @override
