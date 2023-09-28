@@ -1,16 +1,19 @@
 import 'package:bloc/bloc.dart';
-import 'package:mobile/core/di/injector.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mobile/features/common/domain/repositories/security.dart';
 import 'package:mobile/features/onboarding/domain/repositories/auth.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:shared_utils/shared_utils.dart';
 
+@injectable
 class AuthCubit extends Cubit<BlocState> {
-  final _securityRepo = sl<BaseSecurityRepository>(),
-      _authRepo = sl<BaseAuthRepository>();
+  final BaseSecurityRepository _securityRepo;
+  final BaseAuthRepository _authRepo;
 
-  AuthCubit() : super(BlocState.initialState());
+  @factoryMethod
+  AuthCubit(this._securityRepo, this._authRepo)
+      : super(BlocState.initialState());
 
   Future<bool> get isLoggedIn async => await _securityRepo.isLoggedIn;
 

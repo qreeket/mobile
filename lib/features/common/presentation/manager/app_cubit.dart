@@ -2,11 +2,12 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/network/network.info.dart';
 import 'package:mobile/core/routing/router.dart';
+import 'package:mobile/features/common/presentation/globals.dart';
 import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
 import 'package:shared_utils/shared_utils.dart';
 
@@ -14,7 +15,9 @@ import 'package:shared_utils/shared_utils.dart';
 ///  - Observing network state
 ///  - Observing jailbreak state
 ///  - Observing initial route
+@injectable
 class AppCubit extends Cubit<BlocState> {
+  @factoryMethod
   AppCubit(this._authBloc) : super(BlocState.initialState());
   final AuthCubit _authBloc;
 
@@ -30,7 +33,7 @@ class AppCubit extends Cubit<BlocState> {
   }
 
   /// Setup initial route for the app
-  Future<void> setupInitialRoute(GlobalKey<NavigatorState> navigatorKey) async {
+  Future<void> setupInitialRoute() async {
     emit(BlocState.loadingState());
 
     // check if device is connected to the internet
@@ -45,8 +48,8 @@ class AppCubit extends Cubit<BlocState> {
     var jailbroken = Platform.isIOS
         ? await FlutterJailbreakDetection.jailbroken
         : Platform.isAndroid
-        ? await FlutterJailbreakDetection.developerMode
-        : false;
+            ? await FlutterJailbreakDetection.developerMode
+            : false;
 
     // redirect to unsupported device page if device is jailbroken or
     // redirect to home page if user is logged in
@@ -54,8 +57,8 @@ class AppCubit extends Cubit<BlocState> {
     var route = jailbroken
         ? AppRouter.unsupportedDeviceRoute
         : isLoggedIn
-        ? AppRouter.homeRoute
-        : AppRouter.tutorialRoute;
+            ? AppRouter.homeRoute
+            : AppRouter.tutorialRoute;
     navigatorKey.currentState?.pushNamedAndRemoveUntil(route, (_) => false);
   }
 }

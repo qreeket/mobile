@@ -8,7 +8,7 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  final _authBloc = AuthCubit(), _updateAccountBloc = AuthCubit();
+  final _authBloc = sl<AuthCubit>(), _updateAccountBloc = sl<AuthCubit>();
   late final _permissionCubit = context.read<PermissionCubit>();
   Account? _currentUser;
   College? _college;

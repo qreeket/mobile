@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 
 part 'env.g.dart';
 
-@Envied(path: kReleaseMode ? '.env.prod' : '.env.local', obfuscate: true)
+@Envied(path: kReleaseMode ? '.env.prod' : '.env', obfuscate: true)
 abstract class Env {
   // region prefs keys
   @EnviedField(varName: 'ACCESS_TOKEN_KEY')

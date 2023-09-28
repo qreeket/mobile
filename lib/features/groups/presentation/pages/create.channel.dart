@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/utils/extensions.dart';
 import 'package:mobile/core/utils/formatters.dart';
 import 'package:mobile/core/utils/helpers.dart';
 import 'package:mobile/core/utils/validator.dart';
-import 'package:mobile/features/groups/presentation/manager/channel_bloc.dart';
 import 'package:mobile/features/core/presentation/manager/core_bloc.dart';
 import 'package:mobile/features/core/presentation/widgets/channel.type.label.dart';
+import 'package:mobile/features/groups/presentation/manager/channel_bloc.dart';
 import 'package:mobile/generated/assets.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
 import 'package:protobuf_google/protobuf_google.dart';
@@ -25,8 +26,8 @@ class CreateChannelPage extends StatefulWidget {
 }
 
 class _CreateChannelPageState extends State<CreateChannelPage> {
-  final _channelBloc = ChannelBloc(),
-      _createChannelBloc = ChannelBloc(),
+  final _channelBloc = sl<ChannelBloc>(),
+      _createChannelBloc = sl<ChannelBloc>(),
       _formKey = GlobalKey<FormState>(),
       _channelNameController = TextEditingController(),
       _channelDescriptionController = TextEditingController();
@@ -47,7 +48,7 @@ class _CreateChannelPageState extends State<CreateChannelPage> {
   Widget build(BuildContext context) {
     context.withDefaultOverlays(statusBarBrightness: context.theme.brightness);
     return BlocProvider(
-      create: (context) => CoreBloc(),
+      create: (context) => sl<CoreBloc>(),
       child: MultiBlocListener(
         listeners: [
           BlocListener(

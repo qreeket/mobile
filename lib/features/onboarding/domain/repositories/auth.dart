@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/common.pb.dart';
 
-abstract class BaseAuthRepository {
+abstract interface class BaseAuthRepository {
   Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
       authenticateWithApple();
 

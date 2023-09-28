@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/utils/extensions.dart';
 import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
 import 'package:mobile/generated/assets.dart';
@@ -23,7 +24,7 @@ class PhoneNumberVerificationPage extends StatefulWidget {
 class _PhoneNumberVerificationPageState
     extends State<PhoneNumberVerificationPage> {
   var _loading = false;
-  final _authCubit = AuthCubit(),
+  final _authCubit = sl<AuthCubit>(),
       _formKey = GlobalKey<FormState>(),
       _pinController = TextEditingController();
 

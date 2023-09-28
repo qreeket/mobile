@@ -46,6 +46,7 @@ app.*.map.json
 # others
 **/firebase_options.dart
 **/.env.*
+**/.env
 pubspec.lock
 
 **/build/

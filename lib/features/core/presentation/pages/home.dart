@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/routing/router.dart';
 import 'package:mobile/core/utils/actions.dart';
 import 'package:mobile/core/utils/constants.dart';
@@ -62,8 +63,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  final _coreBloc = CoreBloc(),
-      _messagingBloc = MessagingBloc(),
+  final _coreBloc = sl<CoreBloc>(),
+      _messagingBloc = sl<MessagingBloc>(),
       _navIcons = [
         TablerIcons.broadcast,
         TablerIcons.at,
@@ -86,9 +87,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => _coreBloc),
-        BlocProvider(create: (context) => GroupBloc()),
+        BlocProvider(create: (context) => sl<GroupBloc>()),
         BlocProvider(create: (context) => _messagingBloc),
-        BlocProvider(create: (context) => ChannelBloc()),
+        BlocProvider(create: (context) => sl<ChannelBloc>()),
       ],
       child: Scaffold(
         backgroundColor: context.colorScheme.surfaceVariant,

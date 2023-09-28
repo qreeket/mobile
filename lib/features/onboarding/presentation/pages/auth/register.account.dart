@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/routing/router.dart';
 import 'package:mobile/core/utils/constants.dart';
 import 'package:mobile/core/utils/extensions.dart';
@@ -34,11 +35,11 @@ class _RegisterAccountPageState extends State<RegisterAccountPage> {
       _usernameController = TextEditingController(),
       _countryController = TextEditingController(),
       _collegeController = TextEditingController(),
-      _authCubit = AuthCubit(),
-      _createAccountCubit = AuthCubit(),
-      _checkEmailBloc = AuthCubit(),
-      _checkPhoneNumberBloc = AuthCubit(),
-      _permissionCubit = PermissionCubit(),
+      _authCubit = sl<AuthCubit>(),
+      _createAccountCubit = sl<AuthCubit>(),
+      _checkEmailBloc = sl<AuthCubit>(),
+      _checkPhoneNumberBloc = sl<AuthCubit>(),
+      _permissionCubit = sl<PermissionCubit>(),
       _totalPageCount = 4,
       _animations = [
         Assets.animFormValidation,

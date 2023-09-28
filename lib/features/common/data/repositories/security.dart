@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:api_utils/api_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -37,7 +38,7 @@ final class SecureStorageRepository implements BaseSecurityRepository {
       await _secureStorage.write(key: Env.kAccessTokenKey, value: token);
 
   @override
-  Future<Either<void, String>> toggleBiometrics(bool enabled) async {
+  FutureEither<void, String> toggleBiometrics(bool enabled) async {
     var supported = await _localAuthentication.isDeviceSupported();
     logger.d('Biometrics supported: $supported');
     if (!supported) return right('Biometrics are not supported on this device');
@@ -56,7 +57,7 @@ final class SecureStorageRepository implements BaseSecurityRepository {
   }
 
   @override
-  Future<Either<void, String>> toggleNotifications(bool enabled) async {
+  FutureEither<void, String> toggleNotifications(bool enabled) async {
     if (enabled) {
       // initialize the plugin for android & ios
       var initializationSettingsAndroid =

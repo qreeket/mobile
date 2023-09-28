@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:mobile/core/app.dart';
 import 'package:mobile/core/utils/env.dart';
+import 'package:mobile/features/common/domain/repositories/notification.dart';
 import 'package:mobile/firebase_options.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -29,6 +30,8 @@ void main() async => await Sentry.init(
 
         // set orientation to portrait only
         SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+        // await sl<BaseNotificationRepository>().registerDevice();
 
         runApp(const QreeketApp());
       },

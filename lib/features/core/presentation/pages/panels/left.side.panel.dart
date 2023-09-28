@@ -13,7 +13,7 @@ class _LeftSidePanelState extends State<LeftSidePanel> {
   late final _coreBloc = context.read<CoreBloc>(),
       _groupBloc = context.read<GroupBloc>(),
       _channelBloc = context.read<ChannelBloc>();
-  final _messagingBloc = MessagingBloc();
+  final _messagingBloc = sl<MessagingBloc>();
 
   @override
   void initState() {

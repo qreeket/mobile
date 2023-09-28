@@ -7,11 +7,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/routing/router.dart';
 import 'package:mobile/core/utils/constants.dart';
 import 'package:mobile/core/utils/validator.dart';
-import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
 import 'package:mobile/features/core/presentation/manager/core_bloc.dart';
+import 'package:mobile/features/onboarding/presentation/manager/auth_cubit.dart';
 import 'package:mobile/generated/assets.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/group.pb.dart';
@@ -175,10 +176,10 @@ extension BuildContextX on BuildContext {
   // collect additional user info
   Future<void> completeSocialAuthRegistrationSheet(
       AuthenticateWithSocialAccountRequest request) async {
-    final authBloc = AuthCubit(),
-        phoneVerificationBloc = AuthCubit(),
-        checkEmailBloc = AuthCubit(),
-        checkPhoneNumberBloc = AuthCubit(),
+    final authBloc = sl<AuthCubit>(),
+        phoneVerificationBloc = sl<AuthCubit>(),
+        checkEmailBloc = sl<AuthCubit>(),
+        checkPhoneNumberBloc = sl<AuthCubit>(),
         formKey = GlobalKey<FormState>(),
         nameController = TextEditingController(text: request.username),
         phoneNumberController =
@@ -698,7 +699,7 @@ extension BuildContextX on BuildContext {
   }
 
   Future<Country?> showCountryPickerSheet() async {
-    final authBloc = AuthCubit();
+    final authBloc = sl<AuthCubit>();
     authBloc.getCountries();
 
     return await showBarModalBottomSheet(
@@ -757,7 +758,8 @@ extension BuildContextX on BuildContext {
   }
 
   Future<College?> showCollegePickerSheet(String countryId) async {
-    final authBloc = AuthCubit(), searchController = TextEditingController();
+    final authBloc = sl<AuthCubit>(),
+        searchController = TextEditingController();
     authBloc.getColleges(countryId);
     var colleges = <College>[], filteredColleges = <College>[];
 
@@ -949,7 +951,7 @@ extension BuildContextX on BuildContext {
   }
 
   Future<bool?> showDeleteAccountSheet(Account account) async {
-    final authBloc = AuthCubit();
+    final authBloc = sl<AuthCubit>();
     var loading = false,
         acceptTerms = false,
         acceptSubscriptionDeletion = false,

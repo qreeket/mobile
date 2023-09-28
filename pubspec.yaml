@@ -33,10 +33,11 @@ dependencies:
   dartz: ^0.10.1
   lottie: ^2.3.2
   google_fonts: ^4.0.3
-  flutter_secure_storage:
   device_info_plus: ^9.0.3
   shared_utils:
     git: https://github.com/quabynah-bilson/shared_utils.git
+  api_utils:
+    git: https://github.com/quabynah-bilson/api_utils.git
   intl: any
   local_auth: ^2.1.6
   flutter_dotenv: ^5.0.2
@@ -80,6 +81,8 @@ dependencies:
   wakelock_windows: any
   firebase_messaging: ^14.6.8
   fixnum: ^1.1.0
+  flutter_secure_storage: 8.1.0
+  ffi: ^2.1.0
 
 dev_dependencies:
   flutter_test:

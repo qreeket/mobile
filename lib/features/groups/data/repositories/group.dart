@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:api_utils/api_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobile/core/network/network.info.dart';
@@ -18,7 +19,7 @@ final class GroupRepository implements BaseGroupRepository {
       this._remoteDataSource, this._localDataSource, this._networkInfo);
 
   @override
-  Future<Either<Group, String>> getGroupById(String groupId) async {
+  FutureEither<Group, String> getGroupById(String groupId) async {
     if (await _networkInfo.isConnected) {
       final response = await _remoteDataSource.getGroupById(groupId);
       response.fold((l) => _localDataSource.addGroup(l), (r) => null);
@@ -27,7 +28,7 @@ final class GroupRepository implements BaseGroupRepository {
   }
 
   @override
-  Future<Either<Stream<List<Group>>, String>> getGroupsForUser(
+  FutureEither<Stream<List<Group>>, String> getGroupsForUser(
       String userId) async {
     if (await _networkInfo.isConnected) {
       final response = await _remoteDataSource.getGroupsForUser(userId);
@@ -39,7 +40,7 @@ final class GroupRepository implements BaseGroupRepository {
   }
 
   @override
-  Future<Either<Stream<List<Group>>, String>> getGroupsForCurrentUser() async {
+  FutureEither<Stream<List<Group>>, String> getGroupsForCurrentUser() async {
     if (await _networkInfo.isConnected) {
       final response = await _remoteDataSource.getGroupsForCurrentUser();
       response
@@ -50,7 +51,7 @@ final class GroupRepository implements BaseGroupRepository {
   }
 
   @override
-  Future<Either<Group, String>> createGroup({
+  FutureEither<Group, String> createGroup({
     required String name,
     required String description,
     File? image,

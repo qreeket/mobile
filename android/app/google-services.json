@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "937347157207-bqukgt06r3bcq6ndciche6vp0se0l38q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.qcodelabsllc.qreeket",
+            "certificate_hash": "57e5ce0cb35f12935bef220274d9844a55400ee3"
+          }
+        },
+        {
           "client_id": "937347157207-co1ckjqd946p6lgmesvbq2tsoun0747f.apps.googleusercontent.com",
           "client_type": 3
         }

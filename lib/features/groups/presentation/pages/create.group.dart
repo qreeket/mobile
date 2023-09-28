@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/routing/router.dart';
 import 'package:mobile/core/utils/extensions.dart';
 import 'package:mobile/core/utils/image.utils.dart';
@@ -22,7 +23,7 @@ class CreateGroupPage extends StatefulWidget {
 }
 
 class _CreateGroupPageState extends State<CreateGroupPage> {
-  final _groupBloc = GroupBloc(),
+  final _groupBloc = sl<GroupBloc>(),
       _formKey = GlobalKey<FormState>(),
       _groupNameController = TextEditingController(),
       _groupDescriptionController = TextEditingController();

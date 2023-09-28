@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
-import 'package:mobile/core/di/injector.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mobile/features/common/domain/repositories/security.dart';
 import 'package:shared_utils/shared_utils.dart';
 
+@injectable
 class PermissionCubit extends Cubit<BlocState> {
-  final _securityRepo = sl<BaseSecurityRepository>();
+  final BaseSecurityRepository _securityRepo;
 
-  PermissionCubit() : super(BlocState.initialState());
+  @factoryMethod
+  PermissionCubit(this._securityRepo) : super(BlocState.initialState());
 
   Future<bool> get isBiometricEnabled async =>
       await _securityRepo.isBiometricEnabled();

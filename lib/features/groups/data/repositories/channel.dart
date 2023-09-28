@@ -1,3 +1,4 @@
+import 'package:api_utils/api_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobile/core/network/network.info.dart';
@@ -18,7 +19,7 @@ class ChannelRepository implements BaseChannelRepository {
       this._networkInfo, this._remoteDataSource, this._localDataSource);
 
   @override
-  Future<Either<Channel, String>> createChannel({
+  FutureEither<Channel, String> createChannel({
     required String name,
     required String description,
     required String group,
@@ -43,7 +44,7 @@ class ChannelRepository implements BaseChannelRepository {
   }
 
   @override
-  Future<Either<Channel, String>> getChannel(String id) async {
+  FutureEither<Channel, String> getChannel(String id) async {
     if (await _networkInfo.isConnected) {
       var either = await _remoteDataSource.getChannel(id);
       either.fold(
@@ -55,7 +56,7 @@ class ChannelRepository implements BaseChannelRepository {
   }
 
   @override
-  Future<Either<Empty, String>> deleteChannel(String id) async {
+  FutureEither<Empty, String> deleteChannel(String id) async {
     if (await _networkInfo.isConnected) {
       var either = await _remoteDataSource.deleteChannel(id);
       either.fold(
@@ -68,7 +69,7 @@ class ChannelRepository implements BaseChannelRepository {
   }
 
   @override
-  Future<Either<Channel, String>> updateChannel(Channel request) async {
+  FutureEither<Channel, String> updateChannel(Channel request) async {
     if (await _networkInfo.isConnected) {
       var either = await _remoteDataSource.updateChannel(request);
       either.fold(
@@ -82,14 +83,13 @@ class ChannelRepository implements BaseChannelRepository {
   }
 
   @override
-  Future<Either<Stream<List<Channel>>, String>> getChannels(
-      String group) async {
+  FutureEither<Stream<List<Channel>>, String> getChannels(String group) async {
     if (await _networkInfo.isConnected) {
       var either = await _remoteDataSource.getChannels(group);
-      var stream =
-          either.fold((stream) => stream, (error) => const Stream<List<Channel>>.empty());
+      var stream = either.fold(
+          (stream) => stream, (error) => const Stream<List<Channel>>.empty());
       stream.listen((event) {
-        if(event.isEmpty) return;
+        if (event.isEmpty) return;
         _localDataSource.addChannels(event);
       });
     }

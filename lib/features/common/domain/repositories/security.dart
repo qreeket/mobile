@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:api_utils/api_utils.dart';
 
 /// Interface for security repository
 abstract interface class BaseSecurityRepository {
@@ -18,9 +18,9 @@ abstract interface class BaseSecurityRepository {
 
   Future<void> deleteAccessTokenAndUserId();
 
-  Future<Either<void, String>> toggleNotifications(bool enabled);
+  FutureEither<void, String> toggleNotifications(bool enabled);
 
-  Future<Either<void, String>> toggleBiometrics(bool enabled);
+  FutureEither<void, String> toggleBiometrics(bool enabled);
 
   Future<bool> isBiometricEnabled();
 

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mobile/generated/protos/common.pb.dart' as common;
 import 'package:mobile/generated/protos/messaging.pb.dart';
 import 'package:protobuf_google/protobuf_google.dart';
@@ -9,7 +10,9 @@ import 'package:uuid/uuid.dart';
 
 part 'messaging_event.dart';
 
+@injectable
 class MessagingBloc extends Bloc<MessagingEvent, BlocState> {
+  @factoryMethod
   MessagingBloc() : super(BlocState.initialState()) {
     on<GetDirectMessengersForCurrentUser>((event, emit) async {
       emit(BlocState.loadingState());
