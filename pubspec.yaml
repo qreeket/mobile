@@ -83,6 +83,7 @@ dependencies:
   fixnum: ^1.1.0
   flutter_secure_storage: 8.1.0
   ffi: ^2.1.0
+  redacted: ^1.0.10
 
 dev_dependencies:
   flutter_test:
