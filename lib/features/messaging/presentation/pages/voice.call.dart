@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_utils/shared_utils.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
 class VoiceCallPage extends StatefulWidget {
@@ -22,8 +21,7 @@ class _VoiceCallPageState extends State<VoiceCallPage> {
           callID: 'call_id',
           userID: 'user_id',
           userName: 'Quabynah',
-          config: ZegoUIKitPrebuiltCallConfig.oneOnOneVoiceCall()
-            ..onOnlySelfInRoom = (context) => context.navigator.pop(),
+          config: ZegoUIKitPrebuiltCallConfig.oneOnOneVoiceCall(),
         ),
       );
 }

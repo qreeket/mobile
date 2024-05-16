@@ -1,12 +1,9 @@
-import 'dart:io';
-
 import 'package:envied/envied.dart';
 import 'package:flutter/foundation.dart';
 
 part 'env.g.dart';
 
-@Envied(path: kReleaseMode ? '.env.prod' : '.env',
-    obfuscate: true)
+@Envied(path: kReleaseMode ? '.env.prod' : '.env', obfuscate: true)
 abstract class Env {
   // region prefs keys
   @EnviedField(varName: 'ACCESS_TOKEN_KEY')
@@ -80,5 +77,10 @@ abstract class Env {
   @EnviedField(varName: 'COLLEGE_BOX_NAME')
   static final String kCollegesBoxName = _Env.kCollegesBoxName;
 
-  // endregion local database box names
+// endregion local database box names
+
+  // region encryptor
+  @EnviedField(varName: 'E2E_ENCRYPTION_KEY')
+  static final String kEncryptorKey = _Env.kEncryptorKey;
+ // endregion encryptor
 }

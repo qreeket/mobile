@@ -22,8 +22,7 @@ class _VideoCallPageState extends State<VideoCallPage> {
           callID: 'call_id',
           userID: 'user_id',
           userName: 'quabynah',
-          config: ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall()
-            ..onOnlySelfInRoom = (context) => context.navigator.pop(),
+          config: ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall(),
         ),
       );
 }
