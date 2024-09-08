@@ -130,7 +130,7 @@
   "createGroup": "Create Group",
   "createGroupHeader": "Create your group",
   "createGroupSubhead": "A group is where you can share ideas and learn with other students",
-  "findConversationHint": "Find or start a conversation",
+  "findConversationHint": "Start a conversation",
   "privateChannels": "Private Channels",
   "publicChannels": "Public Channels",
   "inviteToGroupShareMessage": "Hey there! I'm inviting you to join {groupName} on Qreeket. Click the link below to join",
