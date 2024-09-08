@@ -73,7 +73,7 @@ final class AppRouterConfig {
       builder: (context) => Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-            elevation: 0, backgroundColor: context.colorScheme.background),
+            elevation: 0, backgroundColor: context.colorScheme.surface),
         body: EmptyContentPlaceholder(
           icon: TablerIcons.building_factory,
           title: context.localizer.underDevelopment,

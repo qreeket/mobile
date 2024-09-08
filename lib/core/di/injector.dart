@@ -25,16 +25,17 @@ Future<void> configureDependencies() async {
   // todo add other adapters
 
   // boxes for Hive
-  await Hive.openBox<Group>(Env.kGroupsBoxName);
-  await Hive.openBox<Channel>(Env.kChannelBoxName);
-  await Hive.openBox<Account>(Env.kAccountsBoxName);
-  await Hive.openBox<Country>(Env.kCountriesBoxName);
-  await Hive.openBox<College>(Env.kCollegesBoxName);
-
-  await Hive.openBox(Env.kMessageBoxName);
-  await Hive.openBox(Env.kUsersBoxName);
-  await Hive.openBox(Env.kUserGroupsBoxName);
-  await Hive.openBox(Env.kUserChannelsBoxName);
-  await Hive.openBox(Env.kUserMessagesBoxName);
+  await Future.wait([
+    Hive.openBox<Group>(Env.kGroupsBoxName),
+    Hive.openBox<Channel>(Env.kChannelBoxName),
+    Hive.openBox<Account>(Env.kAccountsBoxName),
+    Hive.openBox<Country>(Env.kCountriesBoxName),
+    Hive.openBox<College>(Env.kCollegesBoxName),
+    Hive.openBox(Env.kMessageBoxName),
+    Hive.openBox(Env.kUsersBoxName),
+    Hive.openBox(Env.kUserGroupsBoxName),
+    Hive.openBox(Env.kUserChannelsBoxName),
+    Hive.openBox(Env.kUserMessagesBoxName),
+  ]);
   await sl.init();
 }

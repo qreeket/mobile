@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:api_utils/api_utils.dart';
 import 'package:dartz/dartz.dart';
-import 'package:encrypt/encrypt.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
@@ -24,28 +23,18 @@ final class SecureStorageRepository implements BaseSecurityRepository {
   final LocalAuthentication _localAuthentication;
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin;
 
-  // keys for encrypting data on the device
-  final _key = Key.fromUtf8(Env.kEncryptorKey), _iv = IV.fromLength(16);
-  late final _encryptor = Encrypter(AES(_key));
+  @override
+  Future<void> deleteAccessTokenAndUserId() async => await Future.wait([
+        _secureStorage.delete(key: Env.kAccessTokenKey),
+        _secureStorage.delete(key: Env.kUserIdKey),
+      ]);
 
   @override
-  Future<void> deleteAccessTokenAndUserId() async {
-    await _secureStorage.delete(key: Env.kAccessTokenKey);
-    await _secureStorage.delete(key: Env.kUserIdKey);
-  }
-
-  @override
-  Future<String?> getAccessToken() async {
-    var encryptedData = await _secureStorage.read(key: Env.kAccessTokenKey);
-    if (encryptedData == null) return null;
-    return _encryptor.decrypt64(encryptedData, iv: _iv);
-  }
+  Future<String?> getAccessToken() async => await _secureStorage.read(key: Env.kAccessTokenKey);
 
   @override
   Future<void> storeAccessToken(String token) async =>
-      await _secureStorage.write(
-          key: Env.kAccessTokenKey,
-          value: _encryptor.encrypt(token, iv: _iv).base64);
+      await _secureStorage.write(key: Env.kAccessTokenKey, value: token);
 
   @override
   FutureEither<void, String> toggleBiometrics(bool enabled) async {
@@ -53,17 +42,15 @@ final class SecureStorageRepository implements BaseSecurityRepository {
     logger.d('Biometrics supported: $supported');
     if (!supported) return right('Biometrics are not supported on this device');
     if (enabled) {
-      var authenticated = await _localAuthentication.authenticate(
-          localizedReason: 'Authenticate to enable biometrics for this app');
+      var authenticated =
+          await _localAuthentication.authenticate(localizedReason: 'Authenticate to enable biometrics for this app');
       logger.d('Biometrics authenticated: $authenticated');
       if (!authenticated) return right('Biometrics authentication failed');
     } else {
       var stopped = await _localAuthentication.stopAuthentication();
       logger.d('Biometrics stopped: $stopped');
     }
-    await _secureStorage.write(
-        key: Env.kBiometricKey,
-        value: _encryptor.encrypt(enabled.toString(), iv: _iv).base64);
+    await _secureStorage.write(key: Env.kBiometricKey, value: enabled.toString());
     return left(null);
   }
 
@@ -71,12 +58,10 @@ final class SecureStorageRepository implements BaseSecurityRepository {
   FutureEither<void, String> toggleNotifications(bool enabled) async {
     if (enabled) {
       // initialize the plugin for android & ios
-      var initializationSettingsAndroid =
-          const AndroidInitializationSettings('@drawable/app_icon');
+      var initializationSettingsAndroid = const AndroidInitializationSettings('@drawable/app_icon');
       var initializationSettingsIOS = const DarwinInitializationSettings();
-      var initializationSettings = InitializationSettings(
-          android: initializationSettingsAndroid,
-          iOS: initializationSettingsIOS);
+      var initializationSettings =
+          InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
       await _flutterLocalNotificationsPlugin.initialize(initializationSettings,
           onDidReceiveNotificationResponse: (payload) async {
         logger.d('Notification payload: $payload');
@@ -85,12 +70,10 @@ final class SecureStorageRepository implements BaseSecurityRepository {
       // request permission
       var granted = Platform.isIOS
           ? await _flutterLocalNotificationsPlugin
-              .resolvePlatformSpecificImplementation<
-                  IOSFlutterLocalNotificationsPlugin>()
+              .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
               ?.requestPermissions(alert: true, badge: true, sound: true)
           : await _flutterLocalNotificationsPlugin
-              .resolvePlatformSpecificImplementation<
-                  AndroidFlutterLocalNotificationsPlugin>()
+              .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
               ?.requestNotificationsPermission();
       logger.d('Notifications granted: $granted');
       if (!granted!) return right('Notifications permission denied');
@@ -98,50 +81,36 @@ final class SecureStorageRepository implements BaseSecurityRepository {
       // @todo -> replace with notification utility class
 
       // schedule a notification
-      var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-          'main_channel', 'Main channel',
-          channelDescription: 'Main channel notifications',
-          importance: Importance.max,
-          priority: Priority.high);
+      var androidPlatformChannelSpecifics = const AndroidNotificationDetails('main_channel', 'Main channel',
+          channelDescription: 'Main channel notifications', importance: Importance.max, priority: Priority.high);
       var iOSPlatformChannelSpecifics = const DarwinNotificationDetails();
-      var platformChannelSpecifics = NotificationDetails(
-          android: androidPlatformChannelSpecifics,
-          iOS: iOSPlatformChannelSpecifics);
-      await _flutterLocalNotificationsPlugin.show(
-          0,
-          'Thank you for enabling notifications!',
-          'You will now receive notifications for new messages in your groups and channels',
-          platformChannelSpecifics);
+      var platformChannelSpecifics =
+          NotificationDetails(android: androidPlatformChannelSpecifics, iOS: iOSPlatformChannelSpecifics);
+      await _flutterLocalNotificationsPlugin.show(0, 'Thank you for enabling notifications!',
+          'You will now receive notifications for new messages in your groups and channels', platformChannelSpecifics);
     } else {
       await _flutterLocalNotificationsPlugin.cancelAll();
     }
-    await _secureStorage.write(
-        key: Env.kNotificationKey,
-        value: _encryptor.encrypt(enabled.toString(), iv: _iv).base64);
+    await _secureStorage.write(key: Env.kNotificationKey, value: enabled.toString());
     return left(null);
   }
 
   @override
   Future<bool> isBiometricEnabled() async => _secureStorage
       .read(key: Env.kBiometricKey)
-      .then((value) => value == null
-          ? false
-          : _encryptor.decrypt64(value, iv: _iv) == 'true')
+      .then((value) => value == null ? false : value == 'true')
       .catchError((_) => false);
 
   @override
   Future<bool> isNotificationsEnabled() async => _secureStorage
       .read(key: Env.kNotificationKey)
-      .then((value) => value == null
-          ? false
-          : _encryptor.decrypt64(value, iv: _iv) == 'true')
+      .then((value) => value == null ? false : value == 'true')
       .catchError((_) => false);
 
   @override
   Future<String> getLocale() async {
     var decryptedData = await _secureStorage.read(key: Env.kLocaleKey);
-    if (decryptedData == null) return 'en';
-    return _encryptor.decrypt64(decryptedData, iv: _iv);
+    return decryptedData ?? 'en';
   }
 
   @override
@@ -149,18 +118,11 @@ final class SecureStorageRepository implements BaseSecurityRepository {
 
   @override
   Future<void> updateDefaultLanguage(String locale) async =>
-      await _secureStorage.write(
-          key: Env.kLocaleKey,
-          value: _encryptor.encrypt(locale, iv: _iv).base64);
+      await _secureStorage.write(key: Env.kLocaleKey, value: locale);
 
   @override
-  Future<String?> getUserId() async {
-    var encryptedData = await _secureStorage.read(key: Env.kUserIdKey);
-    if (encryptedData == null) return null;
-    return _encryptor.decrypt64(encryptedData, iv: _iv);
-  }
+  Future<String?> getUserId() async => await _secureStorage.read(key: Env.kUserIdKey);
 
   @override
-  Future<void> storeUserId(String uid) async => await _secureStorage.write(
-      key: Env.kUserIdKey, value: _encryptor.encrypt(uid, iv: _iv).base64);
+  Future<void> storeUserId(String uid) async => await _secureStorage.write(key: Env.kUserIdKey, value: uid);
 }

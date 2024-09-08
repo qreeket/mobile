@@ -15,11 +15,20 @@ class NetworkInfo {
 
   Future<bool> get isConnected async {
     var connectivityResult = await _connectivity.checkConnectivity();
-    return _supportedConnections.contains(connectivityResult);
+    var connected = false;
+    for (var connectivityType in connectivityResult) {
+      connected = _supportedConnections.contains(connectivityType);
+    }
+    return connected;
   }
 
   Stream<bool> observeNetwork() async* {
-    yield* _connectivity.onConnectivityChanged
-        .map((event) => _supportedConnections.contains(event));
+    yield* _connectivity.onConnectivityChanged.map((connectivityResult) {
+      var connected = false;
+      for (var connectivityType in connectivityResult) {
+        connected = _supportedConnections.contains(connectivityType);
+      }
+      return connected;
+    });
   }
 }

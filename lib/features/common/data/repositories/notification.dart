@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:api_utils/api_utils.dart';
@@ -10,7 +9,6 @@ import 'package:mobile/features/common/domain/repositories/notification.dart';
 import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:mobile/generated/protos/notification.pb.dart';
 import 'package:mobile/generated/protos/notification_service.pbgrpc.dart';
-import 'package:shared_utils/shared_utils.dart';
 
 @Singleton(as: BaseNotificationRepository)
 final class NotificationRepository implements BaseNotificationRepository {

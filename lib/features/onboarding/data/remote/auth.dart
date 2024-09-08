@@ -9,9 +9,9 @@ import 'package:mobile/core/utils/validator.dart';
 import 'package:mobile/features/common/domain/repositories/security.dart';
 import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/auth_service.pbgrpc.dart';
+import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:mobile/generated/protos/sms.pb.dart';
 import 'package:mobile/generated/protos/sms_service.pbgrpc.dart';
-import 'package:mobile/generated/protos/common.pb.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 // error message
@@ -26,13 +26,12 @@ class AuthRemoteDataSource {
   final AuthServiceClient _authClient;
   final SmsServiceClient _smsClient;
 
-  AuthRemoteDataSource(this._securityRepository, this._authClient,
-      this._facebookAuth, this._googleSignIn, this._smsClient) {
+  AuthRemoteDataSource(
+      this._securityRepository, this._authClient, this._facebookAuth, this._googleSignIn, this._smsClient) {
     _checkTokenAvailability();
   }
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
-      authenticateWithApple() async {
+  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>> authenticateWithApple() async {
     var request = AuthenticateWithSocialAccountRequest();
     return runWithGrpcUnaryZonedGuarded(
       () async {
@@ -44,14 +43,12 @@ class AuthRemoteDataSource {
           ],
           webAuthenticationOptions: WebAuthenticationOptions(
             clientId: 'io.qcodelabsllc.qreeket.ios.sid',
-            redirectUri:
-                Uri.parse('https://qreeket.firebaseapp.com/__/auth/handler'),
+            redirectUri: Uri.parse('https://qreeket.firebaseapp.com/__/auth/handler'),
           ),
         );
 
         request = AuthenticateWithSocialAccountRequest(
-            email: credential.email,
-            username: '${credential.givenName} ${credential.familyName}');
+            email: credential.email, username: '${credential.givenName} ${credential.familyName}');
         var accessToken = await _authClient.authenticate_account(request);
         await _securityRepository.storeAccessToken(accessToken.value);
         await currentUser();
@@ -67,20 +64,17 @@ class AuthRemoteDataSource {
     );
   }
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
-      authenticateWithFacebook() async {
+  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>> authenticateWithFacebook() async {
     var request = AuthenticateWithSocialAccountRequest();
     return runWithGrpcUnaryZonedGuarded(
       () async {
-        var result =
-            await _facebookAuth.login(permissions: ['email', 'public_profile']);
+        var result = await _facebookAuth.login(permissions: ['email', 'public_profile']);
         if (result.status == LoginStatus.success) {
           var user = await _facebookAuth.getUserData();
           var email = user['email'];
           var name = user['name'];
           var avatar = user['picture']['data']['url'];
-          request = AuthenticateWithSocialAccountRequest(
-              avatarUrl: avatar, email: email, username: name);
+          request = AuthenticateWithSocialAccountRequest(avatarUrl: avatar, email: email, username: name);
           var accessToken = await _authClient.authenticate_account(request);
           await _securityRepository.storeAccessToken(accessToken.value);
           await currentUser();
@@ -99,8 +93,7 @@ class AuthRemoteDataSource {
     );
   }
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
-      authenticateWithGoogle() async {
+  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>> authenticateWithGoogle() async {
     var request = AuthenticateWithSocialAccountRequest();
     return runWithGrpcUnaryZonedGuarded(
       () async {
@@ -110,8 +103,7 @@ class AuthRemoteDataSource {
         var email = user.email;
         var name = user.displayName;
         var avatar = user.photoUrl;
-        request = AuthenticateWithSocialAccountRequest(
-            avatarUrl: avatar, email: email, username: name);
+        request = AuthenticateWithSocialAccountRequest(avatarUrl: avatar, email: email, username: name);
         var accessToken = await _authClient.authenticate_account(request);
         await _securityRepository.storeAccessToken(accessToken.value);
         await currentUser();
@@ -159,33 +151,21 @@ class AuthRemoteDataSource {
         return Empty();
       });
 
-  Future<Either<String, String>> requestPasswordReset(
-          String emailOrPhoneNumber) async =>
+  Future<Either<String, String>> requestPasswordReset(String emailOrPhoneNumber) async =>
       runWithGrpcUnaryZonedGuarded(() async {
-        var response = await _authClient
-            .request_password_reset(RequestPasswordResetRequest(
-          email: Validators.validateEmail(emailOrPhoneNumber) == null
-              ? emailOrPhoneNumber
-              : null,
-          phoneNumber: Validators.validatePhone(emailOrPhoneNumber) == null
-              ? emailOrPhoneNumber
-              : null,
+        var response = await _authClient.request_password_reset(RequestPasswordResetRequest(
+          email: Validators.validateEmail(emailOrPhoneNumber) == null ? emailOrPhoneNumber : null,
+          phoneNumber: Validators.validatePhone(emailOrPhoneNumber) == null ? emailOrPhoneNumber : null,
         ));
         return response.value;
       });
 
   Future<Either<String, String>> resetPassword(
-          {required String emailOrPhoneNumber,
-          required String password,
-          required String token}) async =>
+          {required String emailOrPhoneNumber, required String password, required String token}) async =>
       runWithGrpcUnaryZonedGuarded(() async {
         var request = ResetPasswordRequest(
-          email: Validators.validateEmail(emailOrPhoneNumber) == null
-              ? emailOrPhoneNumber
-              : null,
-          phoneNumber: Validators.validatePhone(emailOrPhoneNumber) == null
-              ? emailOrPhoneNumber
-              : null,
+          email: Validators.validateEmail(emailOrPhoneNumber) == null ? emailOrPhoneNumber : null,
+          phoneNumber: Validators.validatePhone(emailOrPhoneNumber) == null ? emailOrPhoneNumber : null,
           password: password,
           resetToken: token,
         );
@@ -193,48 +173,42 @@ class AuthRemoteDataSource {
         return response.value;
       });
 
-  Future<void> signOut() async => runWithGrpcUnaryZonedGuarded(() async {
-        await _facebookAuth.logOut();
-        await _googleSignIn.signOut();
-        await _authClient.logout(Empty());
-        await _securityRepository.deleteAccessTokenAndUserId();
+  Future<void> signOut() async {
+    await Future.wait([
+      _facebookAuth.logOut(),
+      _googleSignIn.signOut(),
+      _authClient.logout(Empty()),
+      _securityRepository.deleteAccessTokenAndUserId(),
+    ]);
 
-        runWithGrpcUnaryZonedGuarded(() async {
-          var response = await _authClient.request_public_access_token(Empty());
-          await _securityRepository.storeAccessToken(response.value);
-        });
-      });
+    runWithGrpcUnaryZonedGuarded(() async {
+      var response = await _authClient.request_public_access_token(Empty());
+      await _securityRepository.storeAccessToken(response.value);
+    });
+  }
 
-  Future<Either<Empty, String>> verifyOTPForPhoneNumber(
-          {required String phoneNumber, required String otp}) async =>
+  Future<Either<Empty, String>> verifyOTPForPhoneNumber({required String phoneNumber, required String otp}) async =>
       runWithGrpcUnaryZonedGuarded(() async {
-        var request =
-            VerifyPhoneRequest(phoneNumber: phoneNumber, verificationCode: otp);
+        var request = VerifyPhoneRequest(phoneNumber: phoneNumber, verificationCode: otp);
         return await _smsClient.verify_phone_verification_code(request);
       });
 
-  Future<Either<Empty, String>> verifyPhoneNumber(String phoneNumber) async =>
-      runWithGrpcUnaryZonedGuarded(() async => await _smsClient
-          .send_phone_verification_code(StringValue(value: phoneNumber)));
+  Future<Either<Empty, String>> verifyPhoneNumber(String phoneNumber) async => runWithGrpcUnaryZonedGuarded(
+      () async => await _smsClient.send_phone_verification_code(StringValue(value: phoneNumber)));
 
-  Future<Either<Account, String>> currentUser() async =>
-      runWithGrpcUnaryZonedGuarded(() async {
+  Future<Either<Account, String>> currentUser() async => runWithGrpcUnaryZonedGuarded(() async {
         var account = await _authClient.get_account(Empty());
         await _securityRepository.storeUserId(account.id);
         return account;
       });
 
-  Future<Either<List<College>, String>> getColleges(String countryId) async =>
-      runWithGrpcUnaryZonedGuarded(() async => (await _authClient
-              .get_colleges_for_country(StringValue(value: countryId)))
-          .colleges);
+  Future<Either<List<College>, String>> getColleges(String countryId) async => runWithGrpcUnaryZonedGuarded(
+      () async => (await _authClient.get_colleges_for_country(StringValue(value: countryId))).colleges);
 
   Future<Either<List<Country>, String>> getCountries() async =>
-      runWithGrpcUnaryZonedGuarded(
-          () async => (await _authClient.get_countries(Empty())).countries);
+      runWithGrpcUnaryZonedGuarded(() async => (await _authClient.get_countries(Empty())).countries);
 
-  Future<Either<Empty, String>> authenticate(
-          AuthenticateWithSocialAccountRequest request) async =>
+  Future<Either<Empty, String>> authenticate(AuthenticateWithSocialAccountRequest request) async =>
       runWithGrpcUnaryZonedGuarded(() async {
         if (!request.avatarUrl.startsWith('http')) {
           request.avatarData = await assetToBytes(request.avatarUrl);
@@ -252,8 +226,7 @@ class AuthRemoteDataSource {
     required String password,
   }) async =>
       runWithGrpcUnaryZonedGuarded(() async {
-        var request = LoginRequest(
-            countryId: countryId, phoneNumber: phoneNumber, password: password);
+        var request = LoginRequest(countryId: countryId, phoneNumber: phoneNumber, password: password);
         var accessToken = await _authClient.login(request);
         await _securityRepository.storeAccessToken(accessToken.value);
         await currentUser();
@@ -266,8 +239,7 @@ class AuthRemoteDataSource {
     required String password,
   }) async =>
       runWithGrpcUnaryZonedGuarded(() async {
-        var request = LoginRequest(
-            countryId: countryId, email: email, password: password);
+        var request = LoginRequest(countryId: countryId, email: email, password: password);
         var accessToken = await _authClient.login(request);
         await _securityRepository.storeAccessToken(accessToken.value);
         await currentUser();
@@ -275,11 +247,9 @@ class AuthRemoteDataSource {
       });
 
   Future<Either<College, String>> getCollege(String id) async =>
-      runWithGrpcUnaryZonedGuarded(() async =>
-          await _authClient.get_college_by_id(StringValue(value: id)));
+      runWithGrpcUnaryZonedGuarded(() async => await _authClient.get_college_by_id(StringValue(value: id)));
 
-  Future<Either<Empty, String>> deleteAccount() async =>
-      runWithGrpcUnaryZonedGuarded(() async {
+  Future<Either<Empty, String>> deleteAccount() async => runWithGrpcUnaryZonedGuarded(() async {
         var request = Empty();
         await _authClient.delete_account(request);
         await _googleSignIn.signOut();
@@ -291,24 +261,20 @@ class AuthRemoteDataSource {
       });
 
   Future<Either<Empty, String>> checkEmail(String email) async =>
-      runWithGrpcUnaryZonedGuarded(
-          () async => await _authClient.check_email(StringValue(value: email)));
+      runWithGrpcUnaryZonedGuarded(() async => await _authClient.check_email(StringValue(value: email)));
 
   Future<Either<Empty, String>> checkPhoneNumber(String phoneNumber) async =>
-      runWithGrpcUnaryZonedGuarded(() async => await _authClient
-          .check_phone_number(StringValue(value: phoneNumber)));
+      runWithGrpcUnaryZonedGuarded(() async => await _authClient.check_phone_number(StringValue(value: phoneNumber)));
 
   Future<Either<Account, String>> updateAccount(Account request) async =>
-      runWithGrpcUnaryZonedGuarded(
-          () async => await _authClient.update_account(request));
+      runWithGrpcUnaryZonedGuarded(() async => await _authClient.update_account(request));
 
   /// Checks if the token is available in the local storage, if not
   /// then it will try to get the token from the server.
   void _checkTokenAvailability() async {
     var loggedIn = await _securityRepository.isLoggedIn;
     if (loggedIn) return;
-    var either = await runWithGrpcUnaryZonedGuarded(
-        () => _authClient.request_public_access_token(Empty()));
+    var either = await runWithGrpcUnaryZonedGuarded(() => _authClient.request_public_access_token(Empty()));
     var response = either.fold((l) => l, (r) => null);
     if (response == null) return;
     await _securityRepository.storeAccessToken(response.value);
