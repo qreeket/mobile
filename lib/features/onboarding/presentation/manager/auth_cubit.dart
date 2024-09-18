@@ -12,8 +12,7 @@ class AuthCubit extends Cubit<BlocState> {
   final BaseAuthRepository _authRepo;
 
   @factoryMethod
-  AuthCubit(this._securityRepo, this._authRepo)
-      : super(BlocState.initialState());
+  AuthCubit(this._securityRepo, this._authRepo) : super(BlocState.initialState());
 
   Future<bool> get isLoggedIn async => await _securityRepo.isLoggedIn;
 
@@ -88,11 +87,10 @@ class AuthCubit extends Cubit<BlocState> {
     required String password,
   }) async {
     emit(BlocState.loadingState());
-    var either = await _authRepo.signInWithEmailAndPassword(
-        countryId: countryId, email: email, password: password);
+    var either = await _authRepo.signInWithEmailAndPassword(countryId: countryId, email: email, password: password);
     either.fold(
-      (l) => emit(BlocState<Empty>.successState(data: l)),
-      (r) => emit(BlocState<String>.errorState(failure: r)),
+      (l) => emit(BlocState<Empty>.errorState(failure: l)),
+      (r) => emit(BlocState<String>.successState(data: r)),
     );
   }
 
@@ -105,8 +103,8 @@ class AuthCubit extends Cubit<BlocState> {
     var either = await _authRepo.signInWithPhoneNumberAndPassword(
         countryId: countryId, phoneNumber: phoneNumber, password: password);
     either.fold(
-      (l) => emit(BlocState<Empty>.successState(data: l)),
-      (r) => emit(BlocState<String>.errorState(failure: r)),
+      (l) => emit(BlocState<Empty>.errorState(failure: l)),
+      (r) => emit(BlocState<String>.successState(data: r)),
     );
   }
 
@@ -116,10 +114,8 @@ class AuthCubit extends Cubit<BlocState> {
     either.fold(
       (l) => emit(BlocState<Empty>.successState(data: l)),
       (r) => r.fold(
-        (l) => emit(
-            BlocState<AuthenticateWithSocialAccountRequest>.successState(
-                data: l)),
-        (r) => emit(BlocState<String>.errorState(failure: r)),
+        (l) => emit(BlocState<String>.errorState(failure: l)),
+        (r) => emit(BlocState<AuthenticateWithSocialAccountRequest>.successState(data: r)),
       ),
     );
   }
@@ -130,10 +126,8 @@ class AuthCubit extends Cubit<BlocState> {
     either.fold(
       (l) => emit(BlocState<Empty>.successState(data: l)),
       (r) => r.fold(
-        (l) => emit(
-            BlocState<AuthenticateWithSocialAccountRequest>.successState(
-                data: l)),
-        (r) => emit(BlocState<String>.errorState(failure: r)),
+        (l) => emit(BlocState<String>.errorState(failure: l)),
+        (r) => emit(BlocState<AuthenticateWithSocialAccountRequest>.successState(data: r)),
       ),
     );
   }
@@ -144,10 +138,8 @@ class AuthCubit extends Cubit<BlocState> {
     either.fold(
       (l) => emit(BlocState<Empty>.successState(data: l)),
       (r) => r.fold(
-        (l) => emit(
-            BlocState<AuthenticateWithSocialAccountRequest>.successState(
-                data: l)),
-        (r) => emit(BlocState<String>.errorState(failure: r)),
+        (l) => emit(BlocState<String>.errorState(failure: l)),
+        (r) => emit(BlocState<AuthenticateWithSocialAccountRequest>.successState(data: r)),
       ),
     );
   }
@@ -221,8 +213,7 @@ class AuthCubit extends Cubit<BlocState> {
     );
   }
 
-  Future<void> authenticate(
-      AuthenticateWithSocialAccountRequest request) async {
+  Future<void> authenticate(AuthenticateWithSocialAccountRequest request) async {
     emit(BlocState.loadingState());
     var either = await _authRepo.authenticate(request);
     either.fold(

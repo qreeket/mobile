@@ -20,17 +20,17 @@ final class AuthRepository implements BaseAuthRepository {
   final AuthLocalDataSource _localDataSource;
 
   @override
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>>
       authenticateWithApple() async =>
           await _remoteDataSource.authenticateWithApple();
 
   @override
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>>
       authenticateWithFacebook() async =>
           await _remoteDataSource.authenticateWithFacebook();
 
   @override
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>>
       authenticateWithGoogle() async =>
           await _remoteDataSource.authenticateWithGoogle();
 

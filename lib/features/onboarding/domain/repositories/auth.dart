@@ -3,13 +3,13 @@ import 'package:mobile/generated/protos/auth.pb.dart';
 import 'package:mobile/generated/protos/common.pb.dart';
 
 abstract interface class BaseAuthRepository {
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>>
       authenticateWithApple();
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>>
       authenticateWithGoogle();
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>>
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>>
       authenticateWithFacebook();
 
   Future<Either<Empty, String>> authenticate(

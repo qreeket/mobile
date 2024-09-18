@@ -13,28 +13,21 @@ import 'package:shared_utils/shared_utils.dart';
 class PhoneNumberVerificationPage extends StatefulWidget {
   final String phoneNumber;
 
-  const PhoneNumberVerificationPage({Key? key, required this.phoneNumber})
-      : super(key: key);
+  const PhoneNumberVerificationPage({Key? key, required this.phoneNumber}) : super(key: key);
 
   @override
-  State<PhoneNumberVerificationPage> createState() =>
-      _PhoneNumberVerificationPageState();
+  State<PhoneNumberVerificationPage> createState() => _PhoneNumberVerificationPageState();
 }
 
-class _PhoneNumberVerificationPageState
-    extends State<PhoneNumberVerificationPage> {
+class _PhoneNumberVerificationPageState extends State<PhoneNumberVerificationPage> {
   var _loading = false;
-  final _authCubit = sl<AuthCubit>(),
-      _formKey = GlobalKey<FormState>(),
-      _pinController = TextEditingController();
+  final _authCubit = sl<AuthCubit>(), _formKey = GlobalKey<FormState>(), _pinController = TextEditingController();
 
   PinTheme get _pinTheme => PinTheme(
         width: context.width * 0.15,
         height: context.width * 0.15,
-        textStyle: context.textTheme.titleMedium
-            ?.copyWith(color: context.colorScheme.onSurface),
-        decoration: BoxDecoration(
-            color: context.colorScheme.surfaceVariant, shape: BoxShape.circle),
+        textStyle: context.textTheme.titleMedium?.copyWith(color: context.colorScheme.onSurface),
+        decoration: BoxDecoration(color: context.colorScheme.surfaceContainerHighest, shape: BoxShape.circle),
       );
 
   Widget get _cursor => Align(
@@ -83,17 +76,13 @@ class _PhoneNumberVerificationPageState
                     toolbarHeight: 0,
                     automaticallyImplyLeading: true,
                     flexibleSpace: Container(
-                      padding: const EdgeInsets.only(
-                          left: 20, bottom: 20, right: 20),
+                      padding: const EdgeInsets.only(left: 20, bottom: 20, right: 20),
                       decoration: BoxDecoration(
-                        color: context.isDarkMode
-                            ? context.colorScheme.surfaceVariant
-                            : null,
+                        color: context.isDarkMode ? context.colorScheme.surfaceContainerHighest : null,
                         gradient: context.isDarkMode
                             ? null
                             : LinearGradient(
-                                colors: context.colorScheme.primary
-                                    .generateColorShades(),
+                                colors: context.colorScheme.primary.generateColorShades(),
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                               ),
@@ -103,23 +92,17 @@ class _PhoneNumberVerificationPageState
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Expanded(
-                            child: Lottie.asset(Assets.animOtpVerification)
-                                .top(context.mediaQuery.padding.top)
-                                .bottom(8),
+                            child:
+                                Lottie.asset(Assets.animOtpVerification).top(context.mediaQuery.padding.top).bottom(8),
                           ),
                           context.localizer.otpVerification.subtitle1(context,
                               weight: FontWeight.w600,
-                              color: context.isDarkMode
-                                  ? context.colorScheme.onSurface
-                                  : context.colorScheme.onPrimary),
-                          context.localizer
-                              .otpVerificationSubhead(widget.phoneNumber)
-                              .subtitle2(context,
-                                  color: context.isDarkMode
-                                      ? context.colorScheme.onSurface
-                                      : context.colorScheme.onPrimary,
-                                  alignment: TextAlign.center,
-                                  emphasis: kEmphasisMedium),
+                              color:
+                                  context.isDarkMode ? context.colorScheme.onSurface : context.colorScheme.onPrimary),
+                          context.localizer.otpVerificationSubhead(widget.phoneNumber).subtitle2(context,
+                              color: context.isDarkMode ? context.colorScheme.onSurface : context.colorScheme.onPrimary,
+                              alignment: TextAlign.center,
+                              emphasis: kEmphasisMedium),
                         ],
                       ),
                     ),
@@ -137,20 +120,16 @@ class _PhoneNumberVerificationPageState
                           shape: BoxShape.circle,
                           boxShadow: const [
                             BoxShadow(
-                              color:
-                                  Color.fromRGBO(0, 0, 0, 0.05999999865889549),
+                              color: Color.fromRGBO(0, 0, 0, 0.05999999865889549),
                               offset: Offset(0, 3),
                               blurRadius: 16,
                             )
                           ],
                         ),
                       ),
-                      androidSmsAutofillMethod:
-                          AndroidSmsAutofillMethod.smsUserConsentApi,
                       onCompleted: (value) {
                         if (value.length == 6 && value.isNumeric) {
-                          _authCubit.verifyOTPForPhoneNumber(
-                              phoneNumber: widget.phoneNumber, otp: value);
+                          _authCubit.verifyOTPForPhoneNumber(phoneNumber: widget.phoneNumber, otp: value);
                         }
                       },
                       showCursor: true,
@@ -165,8 +144,7 @@ class _PhoneNumberVerificationPageState
                         if (_formKey.currentState?.validate() ?? false) {
                           var value = _pinController.text;
                           if (value.length == 6 && value.isNumeric) {
-                            _authCubit.verifyOTPForPhoneNumber(
-                                phoneNumber: widget.phoneNumber, otp: value);
+                            _authCubit.verifyOTPForPhoneNumber(phoneNumber: widget.phoneNumber, otp: value);
                           }
                         }
                       },

@@ -27,21 +27,21 @@ abstract class Env {
 
   // region grpc servers
   @EnviedField(varName: 'AUTH_GRPC_SERVER_HOST')
-  static final String kAuthClientHost = _Env.kAuthClientHost;
+  static final String kAuthClientHost = '192.168.10.17'/*_Env.kAuthClientHost*/;
   @EnviedField(varName: 'AUTH_GRPC_SERVER_PORT')
-  static final int kAuthClientPort = _Env.kAuthClientPort;
+  static final int kAuthClientPort = 7001/*_Env.kAuthClientPort*/;
   @EnviedField(varName: 'SMS_GRPC_SERVER_HOST')
-  static final String kSmsClientHost = _Env.kSmsClientHost;
+  static final String kSmsClientHost = '192.168.10.17'/*_Env.kSmsClientHost*/;
   @EnviedField(varName: 'SMS_GRPC_SERVER_PORT')
-  static final int kSmsClientPort = _Env.kSmsClientPort;
+  static final int kSmsClientPort = 9903/*_Env.kSmsClientPort*/;
   @EnviedField(varName: 'GROUPS_GRPC_SERVER_HOST')
-  static final String kGroupClientHost = _Env.kGroupClientHost;
+  static final String kGroupClientHost = '192.168.10.17'/*_Env.kGroupClientHost*/;
   @EnviedField(varName: 'GROUPS_GRPC_SERVER_PORT')
-  static final int kGroupClientPort = _Env.kGroupClientPort;
+  static final int kGroupClientPort = 9905/*_Env.kGroupClientPort*/;
   @EnviedField(varName: 'NOTIFICATION_GRPC_SERVER_HOST')
-  static final String kNotificationClientHost = _Env.kNotificationClientHost;
+  static final String kNotificationClientHost = '192.168.10.17'/*_Env.kNotificationClientHost*/;
   @EnviedField(varName: 'NOTIFICATION_GRPC_SERVER_PORT')
-  static final int kNotificationClientPort = _Env.kNotificationClientPort;
+  static final int kNotificationClientPort = 9909/*_Env.kNotificationClientPort*/;
 
   // endregion grpc servers
 

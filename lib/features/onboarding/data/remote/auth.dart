@@ -31,7 +31,7 @@ class AuthRemoteDataSource {
     _checkTokenAvailability();
   }
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>> authenticateWithApple() async {
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>> authenticateWithApple() async {
     var request = AuthenticateWithSocialAccountRequest();
     return runWithGrpcUnaryZonedGuarded(
       () async {
@@ -56,15 +56,15 @@ class AuthRemoteDataSource {
       },
       onError: (err) {
         if (err.code == StatusCode.notFound) {
-          return right(left(request));
+          return right(right(request));
         }
 
-        return right(right(err.message ?? _kAuthFailedMessage));
+        return right(left(err.message ?? _kAuthFailedMessage));
       },
     );
   }
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>> authenticateWithFacebook() async {
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>> authenticateWithFacebook() async {
     var request = AuthenticateWithSocialAccountRequest();
     return runWithGrpcUnaryZonedGuarded(
       () async {
@@ -85,15 +85,15 @@ class AuthRemoteDataSource {
       },
       onError: (err) {
         if (err.code == StatusCode.notFound) {
-          return right(left(request));
+          return right(right(request));
         }
 
-        return right(right(err.message ?? _kAuthFailedMessage));
+        return right(left(err.message ?? _kAuthFailedMessage));
       },
     );
   }
 
-  Future<Either<Empty, Either<AuthenticateWithSocialAccountRequest, String>>> authenticateWithGoogle() async {
+  Future<Either<Empty, Either<String, AuthenticateWithSocialAccountRequest>>> authenticateWithGoogle() async {
     var request = AuthenticateWithSocialAccountRequest();
     return runWithGrpcUnaryZonedGuarded(
       () async {
@@ -111,10 +111,10 @@ class AuthRemoteDataSource {
       },
       onError: (err) {
         if (err.code == StatusCode.notFound) {
-          return right(left(request));
+          return right(right(request));
         }
 
-        return right(right(err.message ?? _kAuthFailedMessage));
+        return right(left(err.message ?? _kAuthFailedMessage));
       },
     );
   }

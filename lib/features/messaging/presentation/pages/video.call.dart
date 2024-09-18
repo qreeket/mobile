@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_utils/shared_utils.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
 class VideoCallPage extends StatefulWidget {

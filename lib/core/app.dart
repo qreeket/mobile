@@ -6,6 +6,7 @@ import 'package:mobile/core/di/injector.dart';
 import 'package:mobile/core/routing/router.dart';
 import 'package:mobile/core/utils/constants.dart';
 import 'package:mobile/core/utils/theme.dart';
+import 'package:mobile/features/common/domain/repositories/notification.dart';
 import 'package:mobile/features/common/presentation/globals.dart';
 import 'package:mobile/features/common/presentation/manager/app_cubit.dart';
 import 'package:mobile/features/common/presentation/manager/permission_cubit.dart';
@@ -26,7 +27,11 @@ class _QreeketAppState extends State<QreeketApp> {
   @override
   void initState() {
     super.initState();
-    doAfterDelay(_appBloc.setupInitialRoute);
+    doAfterDelay(() async {
+      await _appBloc.setupInitialRoute();
+      // register device to accept notifications
+      await sl<BaseNotificationRepository>().registerDevice();
+    });
   }
 
   @override
